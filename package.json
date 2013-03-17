@@ -1,0 +1,27 @@
+{
+  "name": "grancalavera.github.com",
+  "version": "0.0.0",
+  "description": "grancalavera.com",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/grancalavera/grancalavera.github.com.git"
+  },
+  "keywords": [
+    "javascript",
+    "html5",
+    "css3"
+  ],
+  "author": "Leon Coto",
+  "license": "BSD",
+  "gitHead": "cc5b839bf574be4a14897cafb2751c67529f8a49",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.5.0"
+  }
+}
