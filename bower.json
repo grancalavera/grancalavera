@@ -1,0 +1,22 @@
+{
+  "name": "grancalavera.github.com",
+  "version": "0.0.0",
+  "homepage": "https://github.com/grancalavera/grancalavera.github.com",
+  "authors": [
+    "Leon Coto <leoncoto@gmail.com>"
+  ],
+  "description": "Leon Coto's personal blog",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~2.1.3"
+  }
+}

@@ -1,6 +1,6 @@
-node_modules/*
-_site/*
-_theme_packages/*
+node_modules
+_site
+_theme_packages
 
 Thumbs.db
 .DS_Store

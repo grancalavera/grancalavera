@@ -1,0 +1,579 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"transa",
+				"transaction_queue"
+			],
+			[
+				"req",
+				"require_relative"
+			],
+			[
+				"A",
+				"AsyncSupport"
+			],
+			[
+				"time",
+				"time_limit"
+			],
+			[
+				"balances",
+				"balance_store"
+			],
+			[
+				"next",
+				"next_message_file"
+			],
+			[
+				"bala",
+				"balance"
+			],
+			[
+				"balanc",
+				"balance_store"
+			],
+			[
+				"with",
+				"withdraw_from"
+			],
+			[
+				"to",
+				"to_i"
+			],
+			[
+				"my",
+				"my_account"
+			],
+			[
+				"depo",
+				"deposit"
+			],
+			[
+				"section",
+				"section-nav-item"
+			],
+			[
+				"subse",
+				"subSectionKey"
+			],
+			[
+				"rotate",
+				"rotateX"
+			],
+			[
+				"per",
+				"perspective-origin"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"trian",
+				"triangles"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"sket",
+				"sketches"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"s-",
+				"s-larger-side"
+			],
+			[
+				"c-s",
+				"c-darkest-dark"
+			],
+			[
+				"c-li",
+				"c-lightest-dark"
+			],
+			[
+				"c-dar",
+				"c-dark-light"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"write",
+				"writeT"
+			],
+			[
+				"proje",
+				"project_str"
+			],
+			[
+				"grunt",
+				"gruntfile"
+			],
+			[
+				"heap",
+				"heapdump"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 49.0,
+		"selected_items":
+		[
+			[
+				"ssbash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"pac ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pa ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"pac re",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssshell",
+				"Set Syntax: Shell Script (Bash)"
+			]
+		],
+		"width": 462.0
+	},
+	"console":
+	{
+		"height": 117.0,
+		"history":
+		[
+			"ls",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/atm.sublime-project",
+		"/Users/grancalavera/sandbox/the-cucumber-book/Gemfile",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/.gitignore",
+		"/Users/grancalavera/sandbox/the-cucumber-book/.git/COMMIT_EDITMSG",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/db/.gitignore",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/lib/account.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/Gemfile",
+		"/Users/grancalavera/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/lib/transaction_queue.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/step_definitions/account_steps.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/lib/nice_bank.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/db/migrate/01_create_accounts.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/world_extensions.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/debugging.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/lib/transaction_processor.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/cash_withdrawal.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/async_support.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/hooks.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/lib/balance_store.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/services.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/messages/.gitignore",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/services.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/a-nice-project/features/step_definitions/a-nice-project_steps.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/a-nice-project/features/first.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/env.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/support/transforms.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/step_definitions/teller_steps.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/step_definitions/cash_slot_steps.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/first.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/features/step_definitions/atm_steps.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm/atm.rb",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/tic_tac_toe/features/tic_tac_toe.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/banking_app/features/change_pin.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/flight-control/features/leaving_flights.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/unicorn/features/first.feature",
+		"/Users/grancalavera/sandbox/the-cucumber-book/projects/unicorn/features/step_definitions/unicorn_steps.rb",
+		"/Users/grancalavera/sandbox/shard-v2/.git/COMMIT_EDITMSG",
+		"/Users/grancalavera/sandbox/shard-v2/frontend/app/core/common/scripts/controllers/app-controller.js",
+		"/Users/grancalavera/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/grancalavera/sandbox/shard-v2/demonotes",
+		"/Users/grancalavera/Desktop/cfb/.git/COMMIT_EDITMSG",
+		"/Users/grancalavera/Desktop/cfb/content.region",
+		"/Users/grancalavera/.sbtconfig",
+		"/Users/grancalavera/Desktop/130921/.git/COMMIT_EDITMSG",
+		"/Users/grancalavera/Desktop/130921/www/styles/four-triangles.scss",
+		"/Users/grancalavera/Desktop/130921/templates/sketch.js",
+		"/Users/grancalavera/Desktop/130921/www/styles/_common.scss",
+		"/Users/grancalavera/Desktop/130921/www/css/four-triangles.css",
+		"/Users/grancalavera/Desktop/130921/www/four-triangles.html",
+		"/Users/grancalavera/Desktop/130921/tasks/130921.js",
+		"/Users/grancalavera/Desktop/130921/130921.json",
+		"/Users/grancalavera/Desktop/130921/www/scripts/triangle.js",
+		"/Users/grancalavera/Desktop/130921/www/triangle.html",
+		"/Users/grancalavera/Desktop/130921/templates/sketch.scss",
+		"/Users/grancalavera/Desktop/130921/bower_components/normalize-css/normalize.css",
+		"/Users/grancalavera/Desktop/130921/www/css/triangle.css",
+		"/Users/grancalavera/Desktop/130921/templates/sketch.html",
+		"/Users/grancalavera/Desktop/130921/Gruntfile.js",
+		"/Users/grancalavera/Desktop/130921/templates/index.html",
+		"/Users/grancalavera/Desktop/130921/www/scripts/lib.js",
+		"/Users/grancalavera/Desktop/130921/www/styles/130921.scss",
+		"/Users/grancalavera/Desktop/130921/bower_components/html5-boilerplate/index.html",
+		"/Users/grancalavera/Desktop/130921/www/scripts/double-pyramid.js",
+		"/Users/grancalavera/Desktop/130921/.gitignore",
+		"/Users/grancalavera/Desktop/130921/www/styles/double-pyramid.scss",
+		"/Users/grancalavera/Desktop/130921/www/pyramid.html",
+		"/Users/grancalavera/Desktop/130921/www/index.html",
+		"/Users/grancalavera/Desktop/130921/www/double-pyramid.html",
+		"/Users/grancalavera/Desktop/130921/package.json",
+		"/Users/grancalavera/sandbox/koans/about_nil.rb",
+		"/Users/grancalavera/sandbox/koans/about_asserts.rb",
+		"/Users/grancalavera/sandbox/koans/about_blocks.rb",
+		"/Users/grancalavera/sandbox/koans/koans.watchr",
+		"/private/etc/hosts",
+		"/Users/grancalavera/Desktop/130921/130921.sublime-",
+		"/Users/grancalavera/Desktop/meta-carnaby/test/app/mobile/config/base.json",
+		"/Users/grancalavera/Desktop/meta-carnaby/Gruntfile.js",
+		"/Users/grancalavera/Desktop/130921/130921.sublime-project",
+		"/Users/grancalavera/Desktop/130921/readme.md",
+		"/Users/grancalavera/Library/Application Support/Sublime Text 3/Packages/User/.git/COMMIT_EDITMSG",
+		"/tmp/subl stdin bXtR6O.txt",
+		"/Users/grancalavera/Desktop/meta-carnaby/grunt-carnaby/Gruntfile.js",
+		"/Users/grancalavera/Desktop/meta-carnaby/grunt-carnaby/app/mobile/scripts/app.js",
+		"/Users/grancalavera/Desktop/meta-carnaby/grunt-carnaby/.carnaby/project.json",
+		"/Users/grancalavera/Desktop/meta-carnaby/grunt-carnaby/.gitignore",
+		"/Users/grancalavera/Desktop/meta-carnaby/meta-carnaby.sublime-project",
+		"/Users/grancalavera/Desktop/.zshrc"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"/Users/grancalavera/sandbox/the-cucumber-book/projects/atm",
+			"/Users/grancalavera/Desktop/cfb/src/styles",
+			"/Users/grancalavera/Desktop/cfb",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"save_and_open_page",
+			"Dark",
+			"KnowsTheDomain",
+			"KnowsMyAccount",
+			"@my_account",
+			"CAPTURE_A_NUMBER",
+			"number",
+			"\\d+",
+			".to_i",
+			"this.subSectionKe",
+			"this.sectionKey",
+			"isSubSection",
+			"isSection",
+			"this",
+			"this.",
+			"subSectionKey",
+			"sectionKey",
+			"3",
+			"pinterest",
+			"navigation",
+			"navigation.block",
+			"pinterest",
+			"s-sml",
+			"10deg",
+			"45deg",
+			"trng",
+			"path",
+			"lib",
+			"triangle",
+			"dimensions",
+			"state_dimensions",
+			"updateDimensions",
+			"state",
+			"updateState",
+			"s-side",
+			"c-darker",
+			"lightest-light",
+			"darkest-light",
+			"lightest-dark",
+			"Common",
+			"Sketches",
+			"Sketch",
+			"_",
+			"css",
+			"bower_components/",
+			"template",
+			"pkg",
+			"file_str",
+			"template",
+			"false",
+			"Light",
+			"heap",
+			"*/\n",
+			"},\n",
+			"100"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "grancalavera.github.com.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"hook",
+				"projects/atm/features/support/hooks.rb"
+			],
+			[
+				"coreapp-controller.js",
+				"frontend/app/core/common/scripts/controllers/app-controller.js"
+			],
+			[
+				"section-nav-ite",
+				"frontend/app/tablet-desktop/scripts/views/section-nav-item.js"
+			],
+			[
+				"section-nav-view",
+				"frontend/app/tablet-desktop/scripts/views/section-nav-view-controller.js"
+			],
+			[
+				"pyramid.scss",
+				"www/styles/pyramid.scss"
+			],
+			[
+				"sketch.js",
+				"templates/sketch.js"
+			],
+			[
+				"pyramid.js",
+				"www/scripts/pyramid.js"
+			],
+			[
+				".json",
+				"130921.json"
+			],
+			[
+				"130scss",
+				"www/styles/130921.scss"
+			],
+			[
+				"common",
+				"www/styles/_common.scss"
+			],
+			[
+				"common.",
+				"www/styles/_common.scss"
+			],
+			[
+				"four-triangles.scss",
+				"www/styles/four-triangles.scss"
+			],
+			[
+				"four-trian",
+				"www/css/four-triangles.css"
+			],
+			[
+				"four-tria",
+				"www/scripts/four-triangles.js"
+			],
+			[
+				"four-tr",
+				"www/four-triangles.html"
+			],
+			[
+				"sketch.html",
+				"templates/sketch.html"
+			],
+			[
+				"lib.js",
+				"www/scripts/lib.js"
+			],
+			[
+				"130.js",
+				"tasks/130921.js"
+			],
+			[
+				"normali",
+				"bower_components/normalize-css/normalize.css"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"www/inde",
+				"www/index.html"
+			],
+			[
+				"index.ht",
+				"templates/index.html"
+			],
+			[
+				"130",
+				"tasks/130921.js"
+			],
+			[
+				"aboutob",
+				"about_objects.rb"
+			],
+			[
+				"aboutnil",
+				"about_nil.rb"
+			],
+			[
+				"wa",
+				"koans.watchr"
+			],
+			[
+				"mobileappjs",
+				"grunt-carnaby/app/mobile/scripts/app.js"
+			],
+			[
+				"mobileapp.js",
+				"grunt-carnaby/app/mobile/scripts/app.js"
+			],
+			[
+				"gruntfile",
+				"grunt-carnaby/Gruntfile.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}
