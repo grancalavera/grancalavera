@@ -6,7 +6,6 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
 <body>
@@ -21,6 +20,16 @@
   <footer id="main-footer" class="container">
     <p>Yeah! Down here!</p>
   </footer>
+
+  <script type="text/javascript">
+    (function () {
+      if (window.location.hostname === 'localhost') {
+        var s = document.createElement('script');
+        s.src = 'http://localhost:35729/livereload.js';
+        document.body.appendChild(s);
+      }
+    })();
+  </script>
 </body>
 
 </html>

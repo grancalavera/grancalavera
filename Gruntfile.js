@@ -1,27 +1,39 @@
 /* global module:false */
 /* jshint node:true */
+'use strict';
 
 module.exports = function(grunt) {
-  // Project configuration.
   grunt.initConfig({
-    // Metadata.
+
     pkg: grunt.file.readJSON('package.json'),
+
+    styles_src: [
+      'bower_components/normalize-css/normalize.css',
+      // this one came with Jekyll
+      'css/syntax.css',
+      '.tmp/css/*.css'
+    ],
+
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    // Task configuration.
+      ' <%= pkg.license %> License */\n',
+
     concat: {
       options: {
         banner: '<%= banner %>',
-        stripBanners: true
       },
-      dist: {
-        src: ['lib/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+      sass_dev: {
+        src: '<%= styles_src %>',
+        dest: '_site/css/main.css'
+      },
+      sass_prod: {
+        src: '<%= styles_src %>',
+        dest: 'css/main.css'
       }
     },
+
     jshint: {
       options: {
         curly: true,
@@ -37,25 +49,46 @@ module.exports = function(grunt) {
         eqnull: true,
         globals: {}
       },
+
       gruntfile: {
         src: 'Gruntfile.js'
-      },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
       }
+
     },
+
     watch: {
+      livereload: {
+        options: {
+          livereload: true,
+        },
+        files: ['_site/css/main.css']
+      },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'nodeunit']
+      sass: {
+        files: 'sass/**/*.scss',
+        tasks: ['compass', 'concat:sass_dev']
       }
-    }
+    },
+
+    compass: {
+      site: {
+        options: {
+          sassDir: 'sass',
+          cssDir: '.tmp/css'
+        }
+      }
+    },
+
+    clean: ['_site/css']
+
   });
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', ['jshint', 'concat']);
+  grunt.registerTask('build', ['clean', 'jshint', 'compass', 'concat']);
+  grunt.registerTask('default', ['build', 'watch']);
+
 };

@@ -11,5 +11,5 @@ exclude: [
   "Gemfile*",
   "package.json",
   "README.md",
-  "Gruntfile.js",
+  "Gruntfile.js"
   ]
