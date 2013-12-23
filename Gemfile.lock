@@ -2,13 +2,19 @@ GEM
   remote: https://rubygems.org/
   specs:
     blankslate (2.1.2.4)
+    chunky_png (1.2.9)
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
     colorator (0.1)
     commander (4.1.5)
       highline (~> 1.6.11)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     fast-stemmer (1.0.2)
     ffi (1.9.3)
+    fssm (0.2.10)
     highline (1.6.20)
     jekyll (1.4.2)
       classifier (~> 1.3)
@@ -40,6 +46,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (2.3.0)
     safe_yaml (0.9.7)
+    sass (3.2.13)
     toml (0.1.0)
       parslet (~> 1.5.0)
     yajl-ruby (1.1.0)
@@ -48,4 +55,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass (~> 0.12.2)
   jekyll (~> 1.4.2)
+  sass (~> 3.2.13)

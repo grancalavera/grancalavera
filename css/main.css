@@ -1,0 +1,33 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+a:hover {
+
+}
+
+#main-header, #main-footer {
+  background-color: #EEEEEE;
+}
+
+#main-header, #main-footer,
+#main-header a, #main-footer a {
+  color: white;
+}
+
+#main-header a, #main-footer a {
+  text-decoration: none;
+}
