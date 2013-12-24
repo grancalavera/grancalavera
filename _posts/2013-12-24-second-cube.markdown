@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Second Cube
-permalink: second-cube
+permalink: blog/second-cube
 published: true
 date: 2013-12-24
 categories: toys

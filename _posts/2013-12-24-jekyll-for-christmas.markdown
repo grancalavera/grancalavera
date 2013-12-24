@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll for Christmas
-permalink: jekyll-for-christmas
+permalink: blog/jekyll-for-christmas
 published: true
 date: 2013-12-24
 categories: blogging scaffolding building

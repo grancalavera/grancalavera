@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Green Park Station
-permalink: green-park-station
+permalink: blog/green-park-station
 published: true
 date: 2013-12-24
 categories: toys

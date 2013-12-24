@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First Cube
-permalink: first-cube
+permalink: blog/first-cube
 published: true
 date: 2013-12-24
 categories: toys
