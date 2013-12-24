@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         options: {
           livereload: true,
         },
-        files: ['_site/css/main.css']
+        files: ['_site/*']
       },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
