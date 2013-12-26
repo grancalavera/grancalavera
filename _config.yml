@@ -3,6 +3,7 @@ markdown: redcarpet
 pygments: true
 timezone: Europe/London
 destination: gh-pages
+source: jekyll
 exclude: [
   "node_modules",
   "bower_components",

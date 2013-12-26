@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     styles_src: [
       'bower_components/normalize-css/normalize.css',
       // this one came with Jekyll
-      'css/syntax.css',
+      'styles/syntax.css',
       '.tmp/css/*.css'
     ],
 
@@ -31,7 +31,11 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= banner %>',
       },
-      styles: {
+      jk_styles: {
+        src: '<%= styles_src %>',
+        dest: 'jekyll/css/main.css'
+      },
+      gh_styles: {
         src: '<%= styles_src %>',
         dest: 'gh-pages/css/main.css'
       }
@@ -144,7 +148,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:tmp',
     'compass',
-    'concat',
+    'concat:jk_styles',
+    'concat:gh_styles',
     'shell:jk_build'
     ]);
 
