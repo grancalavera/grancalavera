@@ -5,9 +5,9 @@
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
   var commitMessage = function commitMessage () {
-    return pkg.name + ' ' +
-      pkg.version + ' ' +
-      grunt.template.date(Date.now(), 'yyyy-mm-dd');
+    return pkg.name + ' - v' +
+      pkg.version + ' - ' +
+      grunt.template.today('isoDateTime');
   };
 
   grunt.initConfig({
