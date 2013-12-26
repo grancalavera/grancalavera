@@ -3,9 +3,16 @@
 'use strict';
 
 module.exports = function(grunt) {
+  var pkg = grunt.file.readJSON('package.json');
+  var commitMessage = function commitMessage () {
+    return pkg.name + ' ' +
+      pkg.version + ' ' +
+      grunt.template.date(Date.now(), 'yyyy-mm-dd');
+  };
+
   grunt.initConfig({
 
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: pkg,
 
     styles_src: [
       'bower_components/normalize-css/normalize.css',
@@ -82,13 +89,81 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: ['_site/css']
+    shell: {
+      jekyll: {
+        options: {
+          stdout: true
+        },
+        command: 'jekyll build'
+      },
+      gh_clone: {
+        options: {
+          stdout: true
+        },
+        command: 'git clone git@github.com:grancalavera/grancalavera.git _site'
+      },
+      gh_checkout: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: '_site'
+          }
+        },
+        command: [
+          'git checkout --orphan gh-pages',
+          'git rm -rf .',
+          'rm .gitignore'
+        ].join('&&')
+      },
+      gh_push: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: '_site'
+          }
+        },
+        command: [
+          'git add -A',
+          'git commit -m "' + commitMessage() + '"',
+          'git push origin gh-pages'
+        ].join('&&')
+      }
+
+    },
+
+    clean: {
+      site: ['_site'],
+      tmp: ['.sass-cache', '.tmp']
+    }
 
   });
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('build', ['clean', 'jshint', 'compass', 'concat']);
-  grunt.registerTask('default', ['build', 'watch']);
+  grunt.registerTask('gh_init', [
+    'clean:site',
+    'shell:gh_clone',
+    'shell:gh_checkout'
+    ]);
+
+  grunt.registerTask('build', [
+    'clean:tmp',
+    'compass',
+    'concat',
+    'shell:jekyll'
+    ]);
+
+  grunt.registerTask('deploy', [
+    'jshint',
+    'gh_init',
+    'build',
+    'shell:gh_push'
+    ]);
+
+  grunt.registerTask('default', [
+    'jshint',
+    'build',
+    'watch'
+    ]);
 
 };

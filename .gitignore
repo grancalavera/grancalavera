@@ -13,3 +13,4 @@ Thumbs.db
 .tmp
 .sass-cache
 bower_components
+*.sublime-workspace
