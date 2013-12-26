@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       },
       sass_dev: {
         src: '<%= styles_src %>',
-        dest: '_site/css/main.css'
+        dest: 'gh-pages/css/main.css'
       },
       sass_prod: {
         src: '<%= styles_src %>',
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
         options: {
           livereload: true,
         },
-        files: ['_site/*']
+        files: ['gh-pages/*']
       },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
     },
 
     compass: {
-      site: {
+      main: {
         options: {
           sassDir: 'sass',
           cssDir: '.tmp/css'
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      jekyll: {
+      jk_build: {
         options: {
           stdout: true
         },
@@ -100,26 +100,25 @@ module.exports = function(grunt) {
         options: {
           stdout: true
         },
-        command: 'git clone git@github.com:grancalavera/grancalavera.git _site'
+        command: 'git clone git@github.com:grancalavera/grancalavera.git gh-pages'
       },
       gh_checkout: {
         options: {
           stdout: true,
           execOptions: {
-            cwd: '_site'
+            cwd: 'gh-pages'
           }
         },
         command: [
           'git checkout --orphan gh-pages',
-          'git rm -rf .',
-          'rm .gitignore'
+          'git rm -rf .'
         ].join('&&')
       },
       gh_push: {
         options: {
           stdout: true,
           execOptions: {
-            cwd: '_site'
+            cwd: 'gh-pages'
           }
         },
         command: [
@@ -132,7 +131,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      site: ['_site'],
+      gh_pages: ['gh-pages'],
       tmp: ['.sass-cache', '.tmp']
     }
 
@@ -141,7 +140,7 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('gh_init', [
-    'clean:site',
+    'clean:gh_pages',
     'shell:gh_clone',
     'shell:gh_checkout'
     ]);
@@ -150,12 +149,11 @@ module.exports = function(grunt) {
     'clean:tmp',
     'compass',
     'concat',
-    'shell:jekyll'
+    'shell:jk_build'
     ]);
 
   grunt.registerTask('deploy', [
     'jshint',
-    'gh_init',
     'build',
     'shell:gh_push'
     ]);
