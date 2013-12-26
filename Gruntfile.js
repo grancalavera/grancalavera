@@ -31,13 +31,9 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= banner %>',
       },
-      sass_dev: {
+      styles: {
         src: '<%= styles_src %>',
         dest: 'gh-pages/css/main.css'
-      },
-      sass_prod: {
-        src: '<%= styles_src %>',
-        dest: 'css/main.css'
       }
     },
 
@@ -74,16 +70,16 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      sass: {
-        files: 'sass/**/*.scss',
-        tasks: ['compass', 'concat:sass_dev']
+      styles: {
+        files: 'styles/**/*.scss',
+        tasks: ['compass', 'concat:styles']
       }
     },
 
     compass: {
       main: {
         options: {
-          sassDir: 'sass',
+          sassDir: 'styles',
           cssDir: '.tmp/css'
         }
       }
