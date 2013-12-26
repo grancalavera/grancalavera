@@ -102,7 +102,7 @@ module.exports = function(grunt) {
         },
         command: 'git clone git@github.com:grancalavera/grancalavera.git gh-pages'
       },
-      gh_checkout: {
+      gh_init: {
         options: {
           stdout: true,
           execOptions: {
@@ -113,6 +113,15 @@ module.exports = function(grunt) {
           'git checkout --orphan gh-pages',
           'git rm -rf .'
         ].join('&&')
+      },
+      gh_checkout: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: 'gh-pages'
+          }
+        },
+        command: 'git checkout gh-pages'
       },
       gh_push: {
         options: {
@@ -141,7 +150,7 @@ module.exports = function(grunt) {
   grunt.registerTask('gh_init', [
     'clean:gh_pages',
     'shell:gh_clone',
-    'shell:gh_checkout'
+    'shell:gh_init'
     ]);
 
   grunt.registerTask('build', [
