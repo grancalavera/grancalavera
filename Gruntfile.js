@@ -114,15 +114,6 @@ module.exports = function(grunt) {
           'git rm -rf .'
         ].join('&&')
       },
-      gh_checkout: {
-        options: {
-          stdout: true,
-          execOptions: {
-            cwd: 'gh-pages'
-          }
-        },
-        command: 'git checkout gh-pages'
-      },
       gh_push: {
         options: {
           stdout: true,
@@ -139,7 +130,8 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      gh_pages: ['gh-pages/*'],
+      gh_pages_dir: 'gh-pages',
+      gh_pages: 'gh-pages/*',
       tmp: ['.sass-cache', '.tmp']
     }
 
@@ -148,9 +140,15 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('gh_init', [
-    'clean:gh_pages',
+    'clean:gh_pages_dir',
     'shell:gh_clone',
     'shell:gh_init'
+    ]);
+
+  grunt.registerTask('gh_reset', [
+    'clean:gh_pages_dir',
+    'shell:gh_clone',
+    'shell:gh_checkout'
     ]);
 
   grunt.registerTask('build', [
