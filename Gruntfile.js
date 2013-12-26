@@ -68,7 +68,7 @@ module.exports = function(grunt) {
         options: {
           livereload: true,
         },
-        files: ['gh-pages/*']
+        files: ['gh-pages/**/*']
       },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: 'styles/**/*.scss',
-        tasks: ['compass', 'concat:styles']
+        tasks: ['compass', 'concat:gh_styles']
       }
     },
 
@@ -127,11 +127,10 @@ module.exports = function(grunt) {
           'git push origin gh-pages'
         ].join('&&')
       }
-
     },
 
     clean: {
-      gh_pages: ['gh-pages'],
+      gh_pages: ['gh-pages/*'],
       tmp: ['.sass-cache', '.tmp']
     }
 
@@ -149,7 +148,6 @@ module.exports = function(grunt) {
     'clean:tmp',
     'compass',
     'concat:jk_styles',
-    'concat:gh_styles',
     'shell:jk_build'
     ]);
 
