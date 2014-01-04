@@ -1,5 +1,69 @@
+@import "compass/utilities/general/clearfix";
+
+$c_base: #000000;
+// $c_base: #ff69b4;
+$c_dark: lighten($c_base, 30%);
+$c_med: lighten($c_base, 50%);
+$c_light: lighten($c_base, 70%);
+$c_lighter: lighten($c_base, 80%);
+
+$from_tablet: 'screen and (min-width: 568px)';
+$from_desktop: 'screen and (min-width: 1024px)';
+
 body {
-  font-size: 0.9em;
-  color: #333333;
+  color: $c_base;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  a {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $c_med;
+  &:hover, &:active {
+    color: $c_dark;
+  }
+}
+
+.container {
+  @include clearfix;
+}
+
+#header {
+  width: 100%;
+  background-color: $c_dark;
+  border-bottom: 3px solid $c_light;
+  color: $c_light;
+
+  a {
+    color: inherit;
+    &:hover, &:active {
+      color: $c_lighter;
+    }
+  }
+}
+
+#header, #content {
+  .container {
+    margin: 0 10px;
+  }
+}
+
+@media #{$from-tablet} {
+  #header, #content {
+    > .container {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media #{$from-desktop} {
+  #header, #content {
+    > .container {
+      max-width: 920px;
+    }
+  }
+}
