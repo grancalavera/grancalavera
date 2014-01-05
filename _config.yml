@@ -1,17 +1,7 @@
-name: grancalavera
+name: Gran Calavera
 markdown: redcarpet
 pygments: true
 timezone: Europe/London
 destination: gh-pages
 source: jekyll
-exclude: [
-  "node_modules",
-  "bower_components",
-  "sass",
-  "*.sublime-*",
-  "bower.json",
-  "Gemfile*",
-  "package.json",
-  "Gruntfile.js",
-  "gh-pages"
-  ]
+root: http://localhost:4000

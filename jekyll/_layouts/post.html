@@ -1,5 +1,11 @@
 ---
 layout: default
 ---
-{% assign post = page %}
+{% comment %}https://gist.github.com/nimbupani/1421828{% endcomment %}
+
+{% assign title = page.title %}
+{% assign url = page.url %}
+{% assign next = page.next %}
+{% assign previous = page.previous %}
+
 {% include post-detail.html %}

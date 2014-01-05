@@ -1,20 +1,23 @@
 @import "compass/utilities/general/clearfix";
+@import "compass/css3/border-radius";
 
-$c_base: #000000;
-// $c_base: #ff69b4;
+$c_base: rgb(0, 0, 0);
 $c_dark: lighten($c_base, 30%);
 $c_med: lighten($c_base, 50%);
 $c_light: lighten($c_base, 70%);
 $c_lighter: lighten($c_base, 80%);
+$c_lightest: lighten($c_base, 95%);
 
 $from_tablet: 'screen and (min-width: 568px)';
 $from_desktop: 'screen and (min-width: 1024px)';
 
 body {
   color: $c_base;
+  background-color: $c_light;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color: $c_med;
   a {
     text-decoration: none;
   }
@@ -27,12 +30,37 @@ a {
   }
 }
 
+ul {
+  list-style: none;
+}
+
+ul, li {
+  padding: 0;
+}
+
 .container {
   @include clearfix;
 }
 
-#header {
+.highlight {
+  background-color: $c_lightest;
+  padding: 1em;
+  font-size: 0.8em;
+  @include border-radius;
+}
+
+#header, #content, #footer {
   width: 100%;
+  > .container {
+    margin: 0 10px;
+  }
+}
+
+#content, #footer {
+  padding-bottom: 2em;
+}
+
+#header {
   background-color: $c_dark;
   border-bottom: 3px solid $c_light;
   color: $c_light;
@@ -45,25 +73,51 @@ a {
   }
 }
 
-#header, #content {
-  .container {
-    margin: 0 10px;
+#content {
+  min-height: 500px;
+  background-color: white;
+}
+
+#footer {
+  background-color: $c_light;
+  color: $c_med;
+}
+
+.post > footer {
+  .next:before {
+    content: "\2192";
+  }
+  .previous:before {
+    content: "\2190";
   }
 }
 
 @media #{$from-tablet} {
-  #header, #content {
+  #header, #content, #footer {
     > .container {
       max-width: 520px;
       margin: 0 auto;
     }
   }
+  .post > footer {
+    .next {
+      float: right;
+    }
+    .previous {
+      float: left;
+    }
+    .next, .previous {
+      &:before {
+        content: none;
+      }
+    }
+  }
 }
 
 @media #{$from-desktop} {
-  #header, #content {
+  #header, #content, #footer {
     > .container {
-      max-width: 920px;
+      max-width: 900px;
     }
   }
 }

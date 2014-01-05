@@ -94,7 +94,7 @@ module.exports = function(grunt) {
         options: {
           stdout: true
         },
-        command: 'jekyll build'
+        command: 'jekyll build --config _config.yml,deploy.yml'
       },
       gh_clone: {
         options: {
@@ -113,6 +113,15 @@ module.exports = function(grunt) {
           'git checkout --orphan gh-pages',
           'git rm -rf .'
         ].join('&&')
+      },
+      gh_checkout: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: 'gh-pages'
+          }
+        },
+        command: 'git checkout gh-pages'
       },
       gh_push: {
         options: {
