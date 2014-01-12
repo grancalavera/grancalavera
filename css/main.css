@@ -468,69 +468,71 @@ table {
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-@media only screen and (max-width: 480px) {
-  /* line 17, ../../styles/main.scss */
-  .post > footer .next .label, .post > footer .previous .label {
-    display: none;
-  }
-  /* line 20, ../../styles/main.scss */
-  .post > footer .next a, .post > footer .previous a {
-    text-decoration: none;
-  }
-  /* line 24, ../../styles/main.scss */
-  .post > footer .next .icon:before {
-    content: "\2192";
-  }
-  /* line 27, ../../styles/main.scss */
-  .post > footer .previous .icon:before {
-    content: "\2190";
-  }
-  /* line 30, ../../styles/main.scss */
-  .post > footer .icon {
-    font-size: 2em;
-  }
-}
-/* line 36, ../../styles/main.scss */
+/* line 14, ../../styles/main.scss */
 body {
   color: black;
   background-color: #b3b3b3;
+  line-height: 1.7;
+  font-size: 1.1em;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
 }
 
-/* line 41, ../../styles/main.scss */
+/* line 23, ../../styles/main.scss */
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
   color: gray;
+  margin: 2em 0;
 }
-/* line 43, ../../styles/main.scss */
+/* line 27, ../../styles/main.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
+  font-style: normal;
 }
 
-/* line 48, ../../styles/main.scss */
+/* line 33, ../../styles/main.scss */
+h1 {
+  font-size: 3em;
+}
+
+/* line 37, ../../styles/main.scss */
+h2 {
+  font-size: 2em;
+  margin: 2.5em 0 1.8em;
+}
+
+/* line 42, ../../styles/main.scss */
+p {
+  margin: 1.8em 0;
+}
+
+/* line 46, ../../styles/main.scss */
 a {
   color: gray;
+  font-style: italic;
 }
-/* line 50, ../../styles/main.scss */
+/* line 49, ../../styles/main.scss */
 a:hover, a:active {
   color: #4d4d4d;
 }
 
-/* line 55, ../../styles/main.scss */
+/* line 54, ../../styles/main.scss */
 ul {
   list-style: none;
 }
 
-/* line 59, ../../styles/main.scss */
+/* line 58, ../../styles/main.scss */
 ul, li {
   padding: 0;
 }
 
-/* line 63, ../../styles/main.scss */
+/* line 62, ../../styles/main.scss */
 .container {
   overflow: hidden;
   *zoom: 1;
 }
 
-/* line 67, ../../styles/main.scss */
+/* line 66, ../../styles/main.scss */
 .highlight {
   background-color: #f2f2f2;
   padding: 1em;
@@ -542,35 +544,38 @@ ul, li {
   border-radius: 5px;
 }
 
-/* line 74, ../../styles/main.scss */
+/* line 73, ../../styles/main.scss */
 #header, #content, #footer {
   width: 100%;
 }
-/* line 76, ../../styles/main.scss */
+/* line 75, ../../styles/main.scss */
 #header > .container, #content > .container, #footer > .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 960px;
 }
 
-/* line 83, ../../styles/main.scss */
+/* line 82, ../../styles/main.scss */
 #content, #footer {
   padding-bottom: 2em;
 }
 
-/* line 87, ../../styles/main.scss */
+/* line 86, ../../styles/main.scss */
 #header {
   background-color: #4d4d4d;
   border-bottom: 3px solid #b3b3b3;
-  color: #b3b3b3;
 }
-/* line 92, ../../styles/main.scss */
+/* line 89, ../../styles/main.scss */
 #header a {
-  color: inherit;
+  color: #595959;
 }
-/* line 94, ../../styles/main.scss */
+/* line 91, ../../styles/main.scss */
 #header a:hover, #header a:active {
-  color: #cccccc;
+  color: gray;
+}
+/* line 95, ../../styles/main.scss */
+#header h1 {
+  margin: 0.8em 0 1em;
 }
 
 /* line 100, ../../styles/main.scss */
@@ -578,17 +583,56 @@ ul, li {
   background-color: white;
 }
 
-/* line 106, ../../styles/main.scss */
+/* line 104, ../../styles/main.scss */
 #footer {
   background-color: #b3b3b3;
   color: gray;
 }
 
-/* line 112, ../../styles/main.scss */
+/* line 110, ../../styles/main.scss */
 .post > footer .next {
   float: right;
 }
-/* line 115, ../../styles/main.scss */
+/* line 113, ../../styles/main.scss */
 .post > footer .previous {
   float: left;
+}
+
+@media only screen and (max-width: 568px) {
+  /* line 119, ../../styles/main.scss */
+  body {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  /* line 123, ../../styles/main.scss */
+  h1 {
+    font-size: 2.5em;
+  }
+
+  /* line 126, ../../styles/main.scss */
+  h2 {
+    font-size: 1.5em;
+  }
+
+  /* line 131, ../../styles/main.scss */
+  .post > footer .next .label, .post > footer .previous .label {
+    display: none;
+  }
+  /* line 134, ../../styles/main.scss */
+  .post > footer .next a, .post > footer .previous a {
+    text-decoration: none;
+  }
+  /* line 138, ../../styles/main.scss */
+  .post > footer .icon {
+    font-size: 2em;
+  }
+  /* line 141, ../../styles/main.scss */
+  .post > footer .next .icon:before {
+    content: "\2192";
+  }
+  /* line 144, ../../styles/main.scss */
+  .post > footer .previous .icon:before {
+    content: "\2190";
+  }
 }
