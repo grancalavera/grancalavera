@@ -3,50 +3,49 @@
 
 $c_base: rgb(0, 0, 0);
 $c_dark: lighten($c_base, 30%);
+$c_med_dark: lighten($c_base, 35%);
 $c_med: lighten($c_base, 50%);
 $c_light: lighten($c_base, 70%);
 $c_lighter: lighten($c_base, 80%);
 $c_lightest: lighten($c_base, 95%);
-
-$up_to_mobile: 'only screen and (max-width: 480px)';
-
-
-@media #{$up_to_mobile} {
-  .post > footer {
-    .next, .previous {
-      .label {
-        display: none;
-      }
-      a {
-        text-decoration: none;
-      }
-    }
-    .next .icon:before {
-      content: "\2192";
-    }
-    .previous .icon:before {
-      content: "\2190";
-    }
-    .icon {
-      font-size: 2em;
-    }
-  }
-}
+$font-family: 'Merriweather', serif;
+$headings-font-family: $font-family;
 
 body {
   color: $c_base;
   background-color: $c_light;
+  line-height: 1.7;
+  font-size: 1.1em;
+  font-family: $font-family;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
   color: $c_med;
+  margin: 2em 0;
   a {
     text-decoration: none;
+    font-style: normal;
   }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 2.5em 0 1.8em;
+}
+
+p {
+  margin: 1.8em 0;
 }
 
 a {
   color: $c_med;
+  font-style: italic;
   &:hover, &:active {
     color: $c_dark;
   }
@@ -87,20 +86,19 @@ ul, li {
 #header {
   background-color: $c_dark;
   border-bottom: 3px solid $c_light;
-  color: $c_light;
-
   a {
-    color: inherit;
+    color: $c_med_dark;
     &:hover, &:active {
-      color: $c_lighter;
+      color: $c_med;
     }
+  }
+  h1 {
+    margin: 0.8em 0 1em;
   }
 }
 
 #content {
-  // min-height: 500px;
   background-color: white;
-
 }
 
 #footer {
@@ -114,5 +112,37 @@ ul, li {
   }
   .previous {
     float: left;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  body {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .post > footer {
+    .next, .previous {
+      .label {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+    .icon {
+      font-size: 2em;
+    }
+    .next .icon:before {
+      content: "\2192";
+    }
+    .previous .icon:before {
+      content: "\2190";
+    }
   }
 }
