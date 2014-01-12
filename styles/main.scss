@@ -70,7 +70,7 @@ ul, li {
   @include border-radius;
 }
 
-#header, #content, #footer {
+#header, #content, #comments, #footer {
   width: 100%;
   > .container {
     margin: 0 auto;
@@ -79,7 +79,7 @@ ul, li {
   }
 }
 
-#content, #footer {
+#content, #comments, #footer {
   padding-bottom: 2em;
 }
 
@@ -99,6 +99,11 @@ ul, li {
 
 #content {
   background-color: white;
+}
+
+#comments {
+  padding-top: 2em;
+  background-color: $c_lightest;
 }
 
 #footer {

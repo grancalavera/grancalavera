@@ -6,6 +6,7 @@ published: true
 date: 2013-12-24
 categories: toys
 tags: javascript css
+comments: true
 ---
 
 The story of Green Park Station

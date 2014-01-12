@@ -1,26 +1,30 @@
-<div class="post">
-  <article class="container">
-    <h2><a href="{{ site.root }}{{ url }}">{{ title }}</a></h2>
-    {{ content }}
-  </article>
+<section id="content">
+  <div class="container">
+    <div class="post">
+      <article class="container">
+        <h2><a href="{{ site.root }}{{ url }}">{{ title }}</a></h2>
+        {{ content }}
+      </article>
 
-  <footer class="container">
-    {% if previous %}
-    <p class="previous">
-      <a href="{{ site.root }}{{ previous.url }}" title="{{ previous.title }}">
-        <span class="icon"></span>
-        <span class="label">{{ previous.title }}</span>
-      </a>
-    </p>
-    {% endif %}
+      <footer class="container">
+        {% if previous %}
+        <p class="previous">
+          <a href="{{ site.root }}{{ previous.url }}" title="{{ previous.title }}">
+            <span class="icon"></span>
+            <span class="label">{{ previous.title }}</span>
+          </a>
+        </p>
+        {% endif %}
 
-    {% if next %}
-    <p class="next">
-      <a href="{{site.root }}{{ next.url }}" title="{{ next.title }}">
-        <span class="icon"></span>
-        <span class="label">{{ next.title }}</span>
-      </a>
-    </p>
-    {% endif %}
-  </footer>
-</div>
+        {% if next %}
+        <p class="next">
+          <a href="{{site.root }}{{ next.url }}" title="{{ next.title }}">
+            <span class="icon"></span>
+            <span class="label">{{ next.title }}</span>
+          </a>
+        </p>
+        {% endif %}
+      </footer>
+    </div>
+  </div>
+</section>

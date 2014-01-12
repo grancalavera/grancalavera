@@ -6,6 +6,7 @@ published: true
 date: 2013-12-24
 categories: toys
 tags: javascript css
+comments: true
 ---
 
 Woodshadows floated silently by through the morning peace from the stairhead seaward where he gazed. Inshore and farther out the mirror of water whitened, spurned by [lightshod hurrying feet](#). White breast of the dim sea. The twining stresses, two by two. A hand plucking the harpstrings, merging their twining chords. Wavewhite wedded words shimmering on the dim tide.

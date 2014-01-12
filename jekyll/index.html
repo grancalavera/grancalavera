@@ -12,5 +12,13 @@ layout: default
 
 {% include post-detail.html %}
 
-
-
+{% if post.comments %}
+{% assign comments_title = '<span id="dsq_comment_count">27</span> Comment(s) for "' + post.title + '"' %}
+<section id="comments">
+  <div class="container">
+    <p><a href="{{ site.root }}{{ post.url }}#comments" title="Comments for {{ post.title }}">
+      <span id="dsq_comment_count">27</span> comment(s) for {{ post.title }}</span>
+    </a></p>
+  </div>
+</section>
+{% endif %}
