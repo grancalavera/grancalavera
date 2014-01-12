@@ -90,7 +90,19 @@ module.exports = function(grunt) {
     },
 
     shell: {
+      jk_detach: {
+        options: {
+          stdout: true
+        },
+        command: 'jekyll serve -w --detach'
+      },
       jk_build: {
+        options: {
+          stdout: true
+        },
+        command: 'jekyll build'
+      },
+      jk_build_production: {
         options: {
           stdout: true
         },
@@ -167,9 +179,16 @@ module.exports = function(grunt) {
     'shell:jk_build'
     ]);
 
+  grunt.registerTask('build:production', [
+    'clean:tmp',
+    'compass',
+    'concat:jk_styles',
+    'shell:jk_build_production'
+    ]);
+
   grunt.registerTask('deploy', [
     'jshint',
-    'build',
+    'build:production',
     'shell:gh_push'
     ]);
 

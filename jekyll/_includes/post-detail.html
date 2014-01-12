@@ -7,16 +7,18 @@
   <footer class="container">
     {% if previous %}
     <p class="previous">
-      <a href="{{ site.root }}{{ previous.url }}">
-        {{ previous.title }}
+      <a href="{{ site.root }}{{ previous.url }}" title="{{ previous.title }}">
+        <span class="icon"></span>
+        <span class="label">{{ previous.title }}</span>
       </a>
     </p>
     {% endif %}
 
     {% if next %}
     <p class="next">
-      <a href="{{site.root }}{{ next.url }}">
-        {{ next.title }}
+      <a href="{{site.root }}{{ next.url }}" title="{{ next.title }}">
+        <span class="icon"></span>
+        <span class="label">{{ next.title }}</span>
       </a>
     </p>
     {% endif %}

@@ -8,8 +8,30 @@ $c_light: lighten($c_base, 70%);
 $c_lighter: lighten($c_base, 80%);
 $c_lightest: lighten($c_base, 95%);
 
-$from_tablet: 'screen and (min-width: 568px)';
-$from_desktop: 'screen and (min-width: 1024px)';
+$up_to_mobile: 'only screen and (max-width: 480px)';
+
+
+@media #{$up_to_mobile} {
+  .post > footer {
+    .next, .previous {
+      .label {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+    .next .icon:before {
+      content: "\2192";
+    }
+    .previous .icon:before {
+      content: "\2190";
+    }
+    .icon {
+      font-size: 2em;
+    }
+  }
+}
 
 body {
   color: $c_base;
@@ -52,7 +74,9 @@ ul, li {
 #header, #content, #footer {
   width: 100%;
   > .container {
-    margin: 0 10px;
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 960px;
   }
 }
 
@@ -74,8 +98,9 @@ ul, li {
 }
 
 #content {
-  min-height: 500px;
+  // min-height: 500px;
   background-color: white;
+
 }
 
 #footer {
@@ -84,40 +109,10 @@ ul, li {
 }
 
 .post > footer {
-  .next:before {
-    content: "\2192";
+  .next {
+    float: right;
   }
-  .previous:before {
-    content: "\2190";
-  }
-}
-
-@media #{$from-tablet} {
-  #header, #content, #footer {
-    > .container {
-      max-width: 520px;
-      margin: 0 auto;
-    }
-  }
-  .post > footer {
-    .next {
-      float: right;
-    }
-    .previous {
-      float: left;
-    }
-    .next, .previous {
-      &:before {
-        content: none;
-      }
-    }
-  }
-}
-
-@media #{$from-desktop} {
-  #header, #content, #footer {
-    > .container {
-      max-width: 900px;
-    }
+  .previous {
+    float: left;
   }
 }
