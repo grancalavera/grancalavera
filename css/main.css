@@ -1,4 +1,4 @@
-/*! grancalavera.com - v0.0.0 - 2014-01-12
+/*! grancalavera.com - v0.0.0 - 2014-01-14
 * Copyright (c) 2014 Leon Coto; MIT License */
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
@@ -545,99 +545,105 @@ ul, li {
 }
 
 /* line 73, ../../styles/main.scss */
+.date > time {
+  font-style: italic;
+  color: #cccccc;
+}
+
+/* line 78, ../../styles/main.scss */
 #header, #content, #comments, #footer {
   width: 100%;
 }
-/* line 75, ../../styles/main.scss */
+/* line 80, ../../styles/main.scss */
 #header > .container, #content > .container, #comments > .container, #footer > .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 960px;
 }
 
-/* line 82, ../../styles/main.scss */
+/* line 87, ../../styles/main.scss */
 #content, #comments, #footer {
   padding-bottom: 2em;
 }
 
-/* line 86, ../../styles/main.scss */
+/* line 91, ../../styles/main.scss */
 #header {
   background-color: #4d4d4d;
   border-bottom: 3px solid #b3b3b3;
 }
-/* line 89, ../../styles/main.scss */
+/* line 94, ../../styles/main.scss */
 #header a {
   color: #595959;
 }
-/* line 91, ../../styles/main.scss */
+/* line 96, ../../styles/main.scss */
 #header a:hover, #header a:active {
   color: gray;
 }
-/* line 95, ../../styles/main.scss */
+/* line 100, ../../styles/main.scss */
 #header h1 {
   margin: 0.8em 0 1em;
 }
 
-/* line 100, ../../styles/main.scss */
+/* line 105, ../../styles/main.scss */
 #content {
   background-color: white;
 }
 
-/* line 104, ../../styles/main.scss */
+/* line 109, ../../styles/main.scss */
 #comments {
   padding-top: 2em;
   background-color: #f2f2f2;
 }
 
-/* line 109, ../../styles/main.scss */
+/* line 114, ../../styles/main.scss */
 #footer {
   background-color: #b3b3b3;
   color: gray;
 }
 
-/* line 115, ../../styles/main.scss */
+/* line 120, ../../styles/main.scss */
 .post > footer .next {
   float: right;
 }
-/* line 118, ../../styles/main.scss */
+/* line 123, ../../styles/main.scss */
 .post > footer .previous {
   float: left;
 }
 
 @media only screen and (max-width: 568px) {
-  /* line 124, ../../styles/main.scss */
+  /* line 129, ../../styles/main.scss */
   body {
     font-size: 1em;
     line-height: 1.5;
   }
 
-  /* line 128, ../../styles/main.scss */
+  /* line 133, ../../styles/main.scss */
   h1 {
     font-size: 2.5em;
   }
 
-  /* line 131, ../../styles/main.scss */
+  /* line 136, ../../styles/main.scss */
   h2 {
     font-size: 1.5em;
   }
 
-  /* line 136, ../../styles/main.scss */
+  /* line 141, ../../styles/main.scss */
   .post > footer .next .label, .post > footer .previous .label {
     display: none;
   }
-  /* line 139, ../../styles/main.scss */
+  /* line 144, ../../styles/main.scss */
   .post > footer .next a, .post > footer .previous a {
     text-decoration: none;
   }
-  /* line 143, ../../styles/main.scss */
+  /* line 148, ../../styles/main.scss */
   .post > footer .icon {
     font-size: 2em;
   }
-  /* line 146, ../../styles/main.scss */
+  /* line 151, ../../styles/main.scss */
   .post > footer .next .icon:before {
     content: "\2192";
   }
-  /* line 149, ../../styles/main.scss */
+  /* line 154, ../../styles/main.scss */
   .post > footer .previous .icon:before {
     content: "\2190";
   }
