@@ -4,11 +4,19 @@
 
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
+
   var commitMessage = function commitMessage () {
     return pkg.name + ' - v' +
       pkg.version + ' - ' +
       grunt.template.today('isoDateTime');
   };
+
+  var dev_scripts = [
+    'bower_components/jquery/jquery.js',
+  ];
+  var gh_scripts = [
+    'bower_components/jquery/jquery.min.js',
+  ];
 
   grunt.initConfig({
 
@@ -31,14 +39,22 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= banner %>',
       },
-      jk_styles: {
-        src: '<%= styles_src %>',
-        dest: 'jekyll/css/main.css'
+      jekyll: {
+        files: {
+          'jekyll/css/main.css': '<%= styles_src %>'
+        }
       },
-      gh_styles: {
-        src: '<%= styles_src %>',
-        dest: 'gh-pages/css/main.css'
-      }
+      gh_pages: {
+        files: {
+          'gh-pages/css/main.css': '<%= styles_src %>'
+        }
+      },
+      // jk_scripts: {
+
+      // },
+      // gh_scripts: {
+
+      // }
     },
 
     jshint: {
@@ -51,7 +67,7 @@ module.exports = function(grunt) {
         noarg: true,
         sub: true,
         undef: true,
-        unused: true,
+        // unused: true,
         boss: true,
         eqnull: true,
         globals: {}
@@ -76,7 +92,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: 'styles/**/*.scss',
-        tasks: ['compass', 'concat:gh_styles']
+        tasks: ['compass', 'concat:gh_pages']
       }
     },
 
@@ -175,14 +191,14 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:tmp',
     'compass',
-    'concat:jk_styles',
+    'concat:jekyll',
     'shell:jk_build'
     ]);
 
   grunt.registerTask('build:production', [
     'clean:tmp',
     'compass',
-    'concat:jk_styles',
+    'concat:jekyll',
     'shell:jk_build_production'
     ]);
 
