@@ -3,6 +3,7 @@
     <div class="post">
       <article class="container">
         <h2><a href="{{ site.root }}{{ url }}">{{ title }}</a></h2>
+        <p class="date"><time datetime="{{ date | date: "%Y-%m-%d" }}">{{ date | date_to_long_string }}</time></p>
         {{ content }}
       </article>
 

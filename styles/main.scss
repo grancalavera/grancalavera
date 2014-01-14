@@ -70,6 +70,11 @@ ul, li {
   @include border-radius;
 }
 
+.date > time {
+  font-style: italic;
+  color: $c_lighter;
+}
+
 #header, #content, #comments, #footer {
   width: 100%;
   > .container {
