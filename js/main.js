@@ -8841,8 +8841,6 @@ if ( typeof window === "object" && typeof window.document === "object" ) {
   //--------------------------------------------------------------------------
 
   var disqus_shortname = 'elgrancalavera';
-  var disqus_api_key = 'phxXWzOrQcXbpoPsI7zd0rcrHXyczEHKWiW5hAUHio9HHhCN0uYYkNFRJ307720c';
-  var disqus_api = 'https://disqus.com/api/3.0/threads/set.jsonp'
 
   //--------------------------------------------------------------------------
   //
@@ -8856,26 +8854,13 @@ if ( typeof window === "object" && typeof window.document === "object" ) {
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   }
 
-  Comments.count = function (root, post) {
-    var url = root + post;
-    console.log(url)
-    $.ajax({
-      type: 'GET',
-      url: disqus_api,
-      data: {
-        api_key: disqus_api_key,
-        forum: disqus_shortname,
-        thread: [ url ]
-      },
-      cache: false,
-      dataType: 'jsonp'
-    })
-
-    console.log('count comments for ' + url)
-    console.log(disqus_api_key)
-    var count = Math.random() < 0.5 ? 1 : 2;
-    var label = count === 1 ? 'comment' : 'comments';
-    return count + ' ' + label
+  Comments.count = function () {
+    var src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    console.log(src);
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = src;
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }
 
   window.Comments = Comments;
