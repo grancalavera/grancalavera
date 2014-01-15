@@ -3,6 +3,7 @@ gh-pages
 _theme_packages
 bower_components
 jekyll/css
+jekyll/js
 
 Thumbs.db
 .DS_Store
