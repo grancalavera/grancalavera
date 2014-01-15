@@ -8854,14 +8854,5 @@ if ( typeof window === "object" && typeof window.document === "object" ) {
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   }
 
-  Comments.count = function () {
-    var src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-    console.log(src);
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = src;
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }
-
   window.Comments = Comments;
 })();

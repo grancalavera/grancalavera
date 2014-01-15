@@ -530,9 +530,10 @@ ul, li {
 .container {
   overflow: hidden;
   *zoom: 1;
+  position: relative;
 }
 
-/* line 66, ../../styles/main.scss */
+/* line 67, ../../styles/main.scss */
 .highlight {
   background-color: #f2f2f2;
   padding: 1em;
@@ -544,106 +545,127 @@ ul, li {
   border-radius: 5px;
 }
 
-/* line 73, ../../styles/main.scss */
+/* line 74, ../../styles/main.scss */
 .date > time {
   font-style: italic;
   color: #cccccc;
 }
 
-/* line 78, ../../styles/main.scss */
+/* line 79, ../../styles/main.scss */
+.gravatar {
+  position: absolute;
+  margin-top: 1.8em;
+}
+
+/* line 84, ../../styles/main.scss */
 #header, #content, #comments, #footer {
   width: 100%;
 }
-/* line 80, ../../styles/main.scss */
+/* line 86, ../../styles/main.scss */
 #header > .container, #content > .container, #comments > .container, #footer > .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 960px;
 }
 
-/* line 87, ../../styles/main.scss */
+/* line 93, ../../styles/main.scss */
 #content, #comments, #footer {
   padding-bottom: 2em;
 }
 
-/* line 91, ../../styles/main.scss */
+/* line 97, ../../styles/main.scss */
 #header {
   background-color: #4d4d4d;
   border-bottom: 3px solid #b3b3b3;
 }
-/* line 94, ../../styles/main.scss */
+/* line 100, ../../styles/main.scss */
 #header a {
   color: #595959;
 }
-/* line 96, ../../styles/main.scss */
+/* line 102, ../../styles/main.scss */
 #header a:hover, #header a:active {
   color: gray;
 }
-/* line 100, ../../styles/main.scss */
+/* line 106, ../../styles/main.scss */
 #header h1 {
   margin: 0.8em 0 1em;
 }
 
-/* line 105, ../../styles/main.scss */
+/* line 111, ../../styles/main.scss */
 #content {
   background-color: white;
 }
 
-/* line 109, ../../styles/main.scss */
+/* line 115, ../../styles/main.scss */
 #comments {
   padding-top: 2em;
   background-color: #f2f2f2;
 }
 
-/* line 114, ../../styles/main.scss */
+/* line 120, ../../styles/main.scss */
 #footer {
   background-color: #b3b3b3;
   color: gray;
 }
+/* line 123, ../../styles/main.scss */
+#footer p {
+  margin-left: 140px;
+}
 
-/* line 120, ../../styles/main.scss */
+/* line 129, ../../styles/main.scss */
 .post > footer .next {
   float: right;
 }
-/* line 123, ../../styles/main.scss */
+/* line 132, ../../styles/main.scss */
 .post > footer .previous {
   float: left;
 }
 
 @media only screen and (max-width: 568px) {
-  /* line 129, ../../styles/main.scss */
+  /* line 138, ../../styles/main.scss */
   body {
     font-size: 1em;
     line-height: 1.5;
   }
 
-  /* line 133, ../../styles/main.scss */
+  /* line 142, ../../styles/main.scss */
   h1 {
     font-size: 2.5em;
   }
 
-  /* line 136, ../../styles/main.scss */
+  /* line 145, ../../styles/main.scss */
   h2 {
     font-size: 1.5em;
   }
 
-  /* line 141, ../../styles/main.scss */
+  /* line 149, ../../styles/main.scss */
+  .gravatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* line 154, ../../styles/main.scss */
+  #footer p {
+    margin-left: 73px;
+  }
+
+  /* line 159, ../../styles/main.scss */
   .post > footer .next .label, .post > footer .previous .label {
     display: none;
   }
-  /* line 144, ../../styles/main.scss */
+  /* line 162, ../../styles/main.scss */
   .post > footer .next a, .post > footer .previous a {
     text-decoration: none;
   }
-  /* line 148, ../../styles/main.scss */
+  /* line 166, ../../styles/main.scss */
   .post > footer .icon {
     font-size: 2em;
   }
-  /* line 151, ../../styles/main.scss */
+  /* line 169, ../../styles/main.scss */
   .post > footer .next .icon:before {
     content: "\2192";
   }
-  /* line 154, ../../styles/main.scss */
+  /* line 172, ../../styles/main.scss */
   .post > footer .previous .icon:before {
     content: "\2190";
   }
