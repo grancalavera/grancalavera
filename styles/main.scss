@@ -61,6 +61,7 @@ ul, li {
 
 .container {
   @include clearfix;
+  position: relative;
 }
 
 .highlight {
@@ -73,6 +74,11 @@ ul, li {
 .date > time {
   font-style: italic;
   color: $c_lighter;
+}
+
+.gravatar {
+  position: absolute;
+  margin-top: 1.8em;
 }
 
 #header, #content, #comments, #footer {
@@ -114,6 +120,9 @@ ul, li {
 #footer {
   background-color: $c_light;
   color: $c_med;
+  p {
+    margin-left: 140px;
+  }
 }
 
 .post > footer {
@@ -135,6 +144,15 @@ ul, li {
   }
   h2 {
     font-size: 1.5em;
+  }
+
+  .gravatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  #footer p {
+    margin-left: 73px;
   }
   .post > footer {
     .next, .previous {

@@ -1,10 +1,9 @@
 ---
 layout: post
 title: Green Park Station
-permalink: blog/green-park-station
 published: true
 date: 2013-12-24
-categories: toys
+category: toys
 tags: javascript css
 comments: true
 ---

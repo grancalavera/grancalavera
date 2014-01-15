@@ -17,18 +17,7 @@ layout: default
 {% assign comments_title = '<span id="dsq_comment_count">27</span> Comment(s) for "' + post.title + '"' %}
 <section id="comments">
   <div class="container">
-    <p><a href="{{ site.root }}{{ post.url }}#comments" title="Comments for {{ post.title }}">
-      <span id="dsq_comment_count">27</span> comment(s) for {{ post.title }}</span>
-    </a></p>
+    <p><a href="{{ site.root }}{{ post.url }}/#disqus_thread" title="Comments">Comments</a></p>
   </div>
 </section>
-
-<script type="text/javascript">
-(function () {
-  var disqusPublicKey = "phxXWzOrQcXbpoPsI7zd0rcrHXyczEHKWiW5hAUHio9HHhCN0uYYkNFRJ307720c";
-  var disqusShortname = "elgrancalavera";
-  var url = "{{site.root}}{{ post.url }}";
-})();
-</script>
-
 {% endif %}

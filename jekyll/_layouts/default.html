@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1.0">
   {% include fonts.html %}
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <script src="/js/main.js"></script>
 </head>
 
 <body>
@@ -24,33 +25,29 @@
 
   <footer id="footer">
     <div class="container">
-    <p>I write computer programs that are either interpreted by other computer programs, or compiled to bytecode and then interpreted by other computer programs.</p>
-
-    <p>I'm on
-      <a target="_blank" href="https://github.com/grancalavera">Github</a>,
-      <a target="_blank" href="https://twitter.com/wasabilion">Twitter</a> and
-      <a target="_blank" href="http://www.linkedin.com/in/leoncoto">Linkedin</a>.</p>
+      <img class="gravatar" src="http://www.gravatar.com/avatar/4f4ed07345d3c3f9b871c1a21d892369?s=120">
+      <p>I write computer programs that are either interpreted by other computer programs, or compiled to bytecode and then interpreted by other computer programs.</p>
+      <p>My name is Le&oacute;n Coto, and I'm on
+        <a target="_blank" href="https://github.com/grancalavera">Github</a>,
+        <a target="_blank" href="https://twitter.com/wasabilion">Twitter</a> and
+        <a target="_blank" href="http://www.linkedin.com/in/leoncoto">Linkedin</a>.</p>
     </div>
   </footer>
 
   <script>
   {% if site.production %}
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-32893184-1', 'grancalavera.com');
     ga('send', 'pageview');
-
   {% else %}
-
     (function () {
       var s = document.createElement('script');
       s.src = 'http://localhost:35729/livereload.js';
       document.body.appendChild(s);
     })();
-
   {% endif %}
   </script>
 

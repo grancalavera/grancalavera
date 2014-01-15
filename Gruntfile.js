@@ -11,13 +11,6 @@ module.exports = function(grunt) {
       grunt.template.today('isoDateTime');
   };
 
-  var dev_scripts = [
-    'bower_components/jquery/jquery.js',
-  ];
-  var gh_scripts = [
-    'bower_components/jquery/jquery.min.js',
-  ];
-
   grunt.initConfig({
 
     pkg: pkg,
@@ -27,6 +20,11 @@ module.exports = function(grunt) {
       // this one came with Jekyll
       'styles/syntax.css',
       '.tmp/css/*.css'
+    ],
+
+    scripts_src: [
+      'bower_components/jquery/jquery.js',
+      'scripts/comments.js'
     ],
 
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
@@ -41,20 +39,16 @@ module.exports = function(grunt) {
       },
       jekyll: {
         files: {
-          'jekyll/css/main.css': '<%= styles_src %>'
+          'jekyll/css/main.css': '<%= styles_src %>',
+          'jekyll/js/main.js': '<%= scripts_src %>'
         }
       },
       gh_pages: {
         files: {
-          'gh-pages/css/main.css': '<%= styles_src %>'
+          'gh-pages/css/main.css': '<%= styles_src %>',
+          'gh-pages/js/main.js': '<%= scripts_src %>'
         }
-      },
-      // jk_scripts: {
-
-      // },
-      // gh_scripts: {
-
-      // }
+      }
     },
 
     jshint: {
@@ -67,14 +61,23 @@ module.exports = function(grunt) {
         noarg: true,
         sub: true,
         undef: true,
-        // unused: true,
+        unused: true,
         boss: true,
         eqnull: true,
-        globals: {}
+        browser: true,
+        asi: true,
+        globals: {
+          console: false,
+          $: false,
+        }
       },
 
       gruntfile: {
         src: 'Gruntfile.js'
+      },
+
+      scripts: {
+        src: 'scripts/**/*.js'
       }
 
     },
@@ -93,6 +96,10 @@ module.exports = function(grunt) {
       styles: {
         files: 'styles/**/*.scss',
         tasks: ['compass', 'concat:gh_pages']
+      },
+      scripts: {
+        files: 'scripts/**/*.js',
+        tasks: ['jshint:scripts', 'concat:gh_pages']
       }
     },
 

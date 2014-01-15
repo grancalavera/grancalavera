@@ -1,10 +1,9 @@
 ---
 layout: post
 title: First Cube
-permalink: blog/first-cube
 published: true
 date: 2013-12-24
-categories: toys
+category: toys
 tags: javascript css
 ---
 
