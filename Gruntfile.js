@@ -123,7 +123,7 @@ module.exports = function(grunt) {
           stdout: true,
           stderr: true
         },
-        command: 'jekyll build'
+        command: 'jekyll build --drafts'
       },
       jk_build_production: {
         options: {

@@ -12,29 +12,37 @@ I decided to use Jekyll
 I already knew how to Grunt
 
 ###Project structure:
-
-    grancalavera.com
-    |-- gh-pages/
-    |-- jekyll/
-    |   |-- _drafts/
-    |   |-- _includes/
-    |   |-- _layouts/
-    |   |-- _posts/
-    |   |-- CNAME
-    |   |-- index.html
-    |-- scripts/
-    |-- syles/
-    |-- _config.yml
-    |-- _config-deploy.yml
-    |-- bower.json
-    |-- Gemfile
-    |-- Gruntfile.js
-    |-- package.json
-    |-- README.json
+{% highlight text %}
+grancalavera.com
+* |-- gh-pages/
+  |-- jekyll/
+  |   |-- _drafts/
+  |   |-- _includes/
+  |   |-- _layouts/
+  |   |-- _posts/
+* |   |-- css/
+* |   |-- js/
+  |   |-- CNAME
+  |   |-- index.html
+  |-- scripts/
+  |-- syles/
+  |-- _config.yml
+  |-- _config-deploy.yml
+  |-- bower.json
+  |-- Gemfile
+  |-- Gruntfile.js
+  |-- package.json
+  |-- README.json
+{% endhighlight%}
 
 ### Configuration
 
 Explain the current config setup
+
+why ```site.root```, jekyll 2.0, maybe better ```site.baseurl```, and permalinks stuff, anyone?
+
+then ```site.production``` where is it used and stuff
+
 
 ### Build
 
@@ -48,3 +56,9 @@ Expain the current buil
 ### More
 
 Post layout and Disqus on [this](#) futute post
+
+
+### References
+
+- jekyll docs
+- [first post on homepage](https://gist.github.com/nimbupani/1421828)
