@@ -3,6 +3,7 @@
 'use strict';
 
 module.exports = function(grunt) {
+
   var pkg = grunt.file.readJSON('package.json');
 
   var commitMessage = function commitMessage () {
@@ -14,6 +15,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: pkg,
+
+    gh_url: 'git@github.com:grancalavera/grancalavera.git',
 
     styles_src: [
       'bower_components/normalize-css/normalize.css',
@@ -37,6 +40,8 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= banner %>',
       },
+      // this ends up inside the jekyll directory
+      // and is used to run the local site
       jekyll: {
         files: {
           'jekyll/css/main.css': '<%= styles_src %>',
@@ -113,33 +118,31 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      jk_detach: {
-        options: {
-          stdout: true
-        },
-        command: 'jekyll serve -w --detach'
-      },
       jk_build: {
         options: {
-          stdout: true
+          stdout: true,
+          stderr: true
         },
         command: 'jekyll build'
       },
       jk_build_production: {
         options: {
-          stdout: true
+          stdout: true,
+          stderr: true
         },
-        command: 'jekyll build --config _config.yml,deploy.yml'
+        command: 'jekyll build --config _config.yml,_config-deploy.yml'
       },
       gh_clone: {
         options: {
-          stdout: true
+          stdout: true,
+          stderr: true
         },
-        command: 'git clone git@github.com:grancalavera/grancalavera.git gh-pages'
+        command: 'git clone <%= gh_url %> gh-pages'
       },
       gh_init: {
         options: {
           stdout: true,
+          stderr: true,
           execOptions: {
             cwd: 'gh-pages'
           }
@@ -152,6 +155,7 @@ module.exports = function(grunt) {
       gh_checkout: {
         options: {
           stdout: true,
+          stderr: true,
           execOptions: {
             cwd: 'gh-pages'
           }
@@ -175,7 +179,6 @@ module.exports = function(grunt) {
 
     clean: {
       gh_pages_dir: 'gh-pages',
-      gh_pages: 'gh-pages/*',
       tmp: ['.sass-cache', '.tmp']
     }
 
