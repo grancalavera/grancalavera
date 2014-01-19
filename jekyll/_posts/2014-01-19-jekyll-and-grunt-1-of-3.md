@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll & Grunt
-published: false
+published: true
 date: 2014-01-19
 categories: code
 tags: jekyll grunt javascript
