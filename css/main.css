@@ -502,28 +502,27 @@ h2 {
 }
 
 /* line 42, ../../styles/main.scss */
-p {
+p, figure {
   margin: 1.8em 0;
 }
 
 /* line 46, ../../styles/main.scss */
+figcaption {
+  text-align: right;
+  font-size: 0.8em;
+  padding-right: 0.2em;
+  font-style: italic;
+  color: #b3b3b3;
+}
+
+/* line 54, ../../styles/main.scss */
 a {
   color: gray;
   font-style: italic;
 }
-/* line 49, ../../styles/main.scss */
+/* line 57, ../../styles/main.scss */
 a:hover, a:active {
   color: #4d4d4d;
-}
-
-/* line 54, ../../styles/main.scss */
-ul {
-  list-style: none;
-}
-
-/* line 58, ../../styles/main.scss */
-ul, li {
-  padding: 0;
 }
 
 /* line 62, ../../styles/main.scss */
@@ -558,115 +557,149 @@ ul, li {
 }
 
 /* line 84, ../../styles/main.scss */
+.epilogue {
+  display: block;
+  font-style: italic;
+  color: gray;
+  font-size: 1.2em;
+  margin: 3.6em 2em;
+}
+/* line 90, ../../styles/main.scss */
+.epilogue a {
+  color: #b3b3b3;
+}
+/* line 92, ../../styles/main.scss */
+.epilogue a:hover, .epilogue a:active {
+  color: #cccccc;
+}
+
+/* line 98, ../../styles/main.scss */
 #header, #content, #comments, #footer {
   width: 100%;
 }
-/* line 86, ../../styles/main.scss */
+/* line 100, ../../styles/main.scss */
 #header > .container, #content > .container, #comments > .container, #footer > .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 960px;
 }
 
-/* line 93, ../../styles/main.scss */
+/* line 107, ../../styles/main.scss */
 #content, #comments, #footer {
   padding-bottom: 2em;
 }
 
-/* line 97, ../../styles/main.scss */
+/* line 111, ../../styles/main.scss */
 #header {
   background-color: #4d4d4d;
   border-bottom: 3px solid #b3b3b3;
 }
-/* line 100, ../../styles/main.scss */
+/* line 114, ../../styles/main.scss */
 #header a {
   color: #595959;
 }
-/* line 102, ../../styles/main.scss */
+/* line 116, ../../styles/main.scss */
 #header a:hover, #header a:active {
   color: gray;
 }
-/* line 106, ../../styles/main.scss */
+/* line 120, ../../styles/main.scss */
 #header h1 {
   margin: 0.8em 0 1em;
 }
 
-/* line 111, ../../styles/main.scss */
+/* line 125, ../../styles/main.scss */
 #content {
   background-color: white;
 }
 
-/* line 115, ../../styles/main.scss */
+/* line 129, ../../styles/main.scss */
 #comments {
   padding-top: 2em;
   background-color: #f2f2f2;
 }
 
-/* line 120, ../../styles/main.scss */
+/* line 134, ../../styles/main.scss */
 #footer {
   background-color: #b3b3b3;
   color: gray;
 }
-/* line 123, ../../styles/main.scss */
+/* line 137, ../../styles/main.scss */
 #footer p {
   margin-left: 140px;
 }
 
-/* line 129, ../../styles/main.scss */
+/* line 143, ../../styles/main.scss */
 .post > footer .next {
   float: right;
 }
-/* line 132, ../../styles/main.scss */
+/* line 146, ../../styles/main.scss */
 .post > footer .previous {
   float: left;
 }
 
 @media only screen and (max-width: 568px) {
-  /* line 138, ../../styles/main.scss */
+  /* line 152, ../../styles/main.scss */
   body {
     font-size: 1em;
     line-height: 1.5;
   }
 
-  /* line 142, ../../styles/main.scss */
+  /* line 156, ../../styles/main.scss */
   h1 {
     font-size: 2.5em;
   }
 
-  /* line 145, ../../styles/main.scss */
+  /* line 159, ../../styles/main.scss */
   h2 {
     font-size: 1.5em;
   }
 
-  /* line 149, ../../styles/main.scss */
+  /* line 163, ../../styles/main.scss */
   .gravatar {
     width: 60px;
     height: 60px;
   }
 
-  /* line 154, ../../styles/main.scss */
+  /* line 168, ../../styles/main.scss */
   #footer p {
     margin-left: 73px;
   }
 
-  /* line 159, ../../styles/main.scss */
+  /* line 173, ../../styles/main.scss */
   .post > footer .next .label, .post > footer .previous .label {
     display: none;
   }
-  /* line 162, ../../styles/main.scss */
+  /* line 176, ../../styles/main.scss */
   .post > footer .next a, .post > footer .previous a {
     text-decoration: none;
   }
-  /* line 166, ../../styles/main.scss */
+  /* line 180, ../../styles/main.scss */
   .post > footer .icon {
     font-size: 2em;
   }
-  /* line 169, ../../styles/main.scss */
+  /* line 183, ../../styles/main.scss */
   .post > footer .next .icon:before {
     content: "\2192";
   }
-  /* line 172, ../../styles/main.scss */
+  /* line 186, ../../styles/main.scss */
   .post > footer .previous .icon:before {
     content: "\2190";
+  }
+
+  /* line 191, ../../styles/main.scss */
+  .epilogue {
+    display: block;
+    font-style: italic;
+    color: gray;
+    font-size: 1.1em;
+    margin: 3em 1em;
+  }
+  /* line 197, ../../styles/main.scss */
+  .epilogue a {
+    color: #b3b3b3;
+  }
+  /* line 199, ../../styles/main.scss */
+  .epilogue a:hover, .epilogue a:active {
+    color: #cccccc;
   }
 }
