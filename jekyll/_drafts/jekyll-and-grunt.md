@@ -33,7 +33,7 @@ grancalavera.com
   |-- Gruntfile.js
   |-- package.json
   |-- README.json
-{% endhighlight%}
+{% endhighlight %}
 
 ### Configuration
 
