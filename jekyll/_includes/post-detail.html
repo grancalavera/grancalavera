@@ -2,7 +2,7 @@
   <div class="container">
     <div class="post">
       <article class="container">
-        <h2><a href="{{ site.root }}{{ url }}">{{ title }}</a></h2>
+        <h2><a href="{{ url }}">{{ title }}</a></h2>
         <p class="date"><time datetime="{{ date | date: "%Y-%m-%d" }}">{{ date | date_to_long_string }}</time></p>
         {{ content }}
       </article>
@@ -10,7 +10,7 @@
       <footer class="container">
         {% if previous %}
         <p class="previous">
-          <a href="{{ site.root }}{{ previous.url }}" title="{{ previous.title }}">
+          <a href="{{ previous.url }}" title="{{ previous.title }}">
             <span class="icon"></span>
             <span class="label">{{ previous.title }}</span>
           </a>
@@ -19,7 +19,7 @@
 
         {% if next %}
         <p class="next">
-          <a href="{{site.root }}{{ next.url }}" title="{{ next.title }}">
+          <a href="{{site.baseurl }}{{ next.url }}" title="{{ next.title }}">
             <span class="icon"></span>
             <span class="label">{{ next.title }}</span>
           </a>

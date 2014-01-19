@@ -39,8 +39,16 @@ h2 {
   margin: 2.5em 0 1.8em;
 }
 
-p {
+p, figure {
   margin: 1.8em 0;
+}
+
+figcaption {
+  text-align: right;
+  font-size: 0.8em;
+  padding-right: 0.2em;
+  font-style: italic;
+  color: $c_light;
 }
 
 a {
@@ -49,14 +57,6 @@ a {
   &:hover, &:active {
     color: $c_dark;
   }
-}
-
-ul {
-  list-style: none;
-}
-
-ul, li {
-  padding: 0;
 }
 
 .container {
@@ -79,6 +79,20 @@ ul, li {
 .gravatar {
   position: absolute;
   margin-top: 1.8em;
+}
+
+.epilogue {
+  display: block;
+  font-style: italic;
+  color: $c_med;
+  font-size: 1.2em;
+  margin: 3.6em 2em;
+  a {
+    color: $c_light;
+    &:hover, &:active {
+      color: $c_lighter;
+    }
+  }
 }
 
 #header, #content, #comments, #footer {
@@ -173,4 +187,19 @@ ul, li {
       content: "\2190";
     }
   }
+
+  .epilogue {
+    display: block;
+    font-style: italic;
+    color: $c_med;
+    font-size: 1.1em;
+    margin: 3em 1em;
+    a {
+      color: $c_light;
+      &:hover, &:active {
+        color: $c_lighter;
+      }
+    }
+  }
+
 }

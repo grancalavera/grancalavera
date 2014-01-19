@@ -4,6 +4,8 @@
 
 module.exports = function(grunt) {
 
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
   var pkg = grunt.file.readJSON('package.json');
 
   var commitMessage = function commitMessage () {
@@ -130,7 +132,7 @@ module.exports = function(grunt) {
           stdout: true,
           stderr: true
         },
-        command: 'jekyll build --config _config.yml,_config-deploy.yml'
+        command: 'jekyll build --config _config.yml,_config-production.yml'
       },
       gh_clone: {
         options: {
@@ -183,8 +185,6 @@ module.exports = function(grunt) {
     }
 
   });
-
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('gh_init', [
     'clean:gh_pages_dir',
