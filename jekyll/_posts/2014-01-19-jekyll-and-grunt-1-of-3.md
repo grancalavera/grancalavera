@@ -12,32 +12,39 @@ I have already tried to start a blog in the past. Do a quick search for [grancal
 
 One of the reasons why I have started over and over again so many times is that I've never been able to choose a blogging platform. I've always wanted to be able to do stuff without having to spend loads of time reading through pages and pages of documentation, obscure details on server configuration and folder structures.
 
+### Jekyll
+
 Having played around with [GitHub Pages](http://pages.github.com/) in the last couple of years, I decided to try [Jekyll](http://jekyllrb.com/), the blog-aware static site generator used by GitHub on their GitHub Pages. Jekyll has proved to be dead-simple to use: once you get it running you can get your head around it in 20 minutes.
 
-<figure>
+<figure id="project_structure">
 <figcaption>project structure</figcaption>
 {% highlight text %}
   grancalavera.com
-* ├── gh-pages
-  ├── jekyll
-  │   ├── _drafts
-  │   ├── _includes
-  │   ├── _layouts
-  │   ├── _posts
-  │ * ├── css
-  │ * ├── js
+* ├── .tmp/
+* ├── bower_components/
+* ├── gh-pages/
+  ├── jekyll/
+  │   ├── _drafts/
+  │   ├── _includes/
+  │   ├── _layouts/
+  │   ├── _posts/
+  │ * ├── css/
+  │ * ├── js/
   │   ├── CNAME
   │   └── index.html
-  ├── scripts
-  ├── styles
+* ├── node_modules/
+  ├── scripts/
+  ├── styles/
   ├── .gitignore
-  ├── Gemfile
-  ├── Gruntfile.js
-  ├── README.md
   ├── _config-production.yml
   ├── _config.yml
   ├── bower.json
-  └── package.json
+  ├── Gemfile
+  ├── Gemfile.lock
+  ├── grancalavera.com.sublime-project
+  ├── Gruntfile.js
+  ├── package.json
+  └── README.md
 
 * Ignored in .gitignore
 {% endhighlight %}</figure>

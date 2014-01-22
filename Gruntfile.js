@@ -38,6 +38,8 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' <%= pkg.license %> License */\n',
 
+    // all this concat business is still very confusing, names aren't
+    // very helpfull really
     concat: {
       options: {
         banner: '<%= banner %>',
