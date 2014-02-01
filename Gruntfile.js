@@ -38,24 +38,18 @@ module.exports = function(grunt) {
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' <%= pkg.license %> License */\n',
 
-    // all this concat business is still very confusing, names aren't
-    // very helpfull really
     concat: {
       options: {
         banner: '<%= banner %>',
       },
-      // this ends up inside the jekyll directory
-      // and is used to run the local site
-      jekyll: {
+      styles: {
         files: {
-          'jekyll/css/main.css': '<%= styles_src %>',
-          'jekyll/js/main.js': '<%= scripts_src %>'
+          'jekyll/css/main.css': '<%= styles_src %>'
         }
       },
-      gh_pages: {
+      scripts: {
         files: {
-          'gh-pages/css/main.css': '<%= styles_src %>',
-          'gh-pages/js/main.js': '<%= scripts_src %>'
+          'jekyll/js/main.js': '<%= scripts_src %>'
         }
       }
     },
@@ -98,17 +92,21 @@ module.exports = function(grunt) {
         },
         files: ['gh-pages/**/*']
       },
+      jekyll: {
+        files: 'jekyll/**/*',
+        tasks: ['shell:jk_build']
+      },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
       styles: {
         files: 'styles/**/*.scss',
-        tasks: ['compass', 'concat:gh_pages']
+        tasks: ['compass', 'concat:styles']
       },
       scripts: {
         files: 'scripts/**/*.js',
-        tasks: ['jshint:scripts', 'concat:gh_pages']
+        tasks: ['jshint:scripts', 'concat:scripts']
       }
     },
 
@@ -117,6 +115,15 @@ module.exports = function(grunt) {
         options: {
           sassDir: 'styles',
           cssDir: '.tmp/css'
+        }
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 4000,
+          base: 'gh-pages'
         }
       }
     },
@@ -182,47 +189,41 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      gh_pages_dir: 'gh-pages',
-      tmp: ['.sass-cache', '.tmp']
+      gh_pages: 'gh-pages',
+      tmp: ['.sass-cache', '.tmp', 'jekyll/css', 'jekyll/js']
     }
 
   });
 
   grunt.registerTask('gh_init', [
-    'clean:gh_pages_dir',
+    'clean:gh_pages',
     'shell:gh_clone',
     'shell:gh_init'
     ]);
 
   grunt.registerTask('gh_reset', [
-    'clean:gh_pages_dir',
+    'clean:gh_pages',
     'shell:gh_clone',
     'shell:gh_checkout'
     ]);
 
   grunt.registerTask('build', [
+    'jshint',
     'clean:tmp',
     'compass',
-    'concat:jekyll',
-    'shell:jk_build'
-    ]);
-
-  grunt.registerTask('build:production', [
-    'clean:tmp',
-    'compass',
-    'concat:jekyll',
-    'shell:jk_build_production'
+    'concat',
     ]);
 
   grunt.registerTask('deploy', [
-    'jshint',
-    'build:production',
+    'build',
+    'shell:jk_build_production',
     'shell:gh_push'
     ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'build',
+    'shell:jk_build',
+    'connect',
     'watch'
     ]);
 
