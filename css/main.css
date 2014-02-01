@@ -1,4 +1,4 @@
-/*! grancalavera.com - v0.0.0 - 2014-01-19
+/*! grancalavera.com - v0.0.0 - 2014-02-01
 * Copyright (c) 2014 Leon Coto; MIT License */
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
@@ -468,7 +468,7 @@ table {
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-/* line 14, ../../styles/main.scss */
+/* line 15, ../../styles/main.scss */
 body {
   color: black;
   background-color: #b3b3b3;
@@ -478,35 +478,35 @@ body {
   font-weight: 400;
 }
 
-/* line 23, ../../styles/main.scss */
+/* line 24, ../../styles/main.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: gray;
   margin: 2em 0;
 }
-/* line 27, ../../styles/main.scss */
+/* line 28, ../../styles/main.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
   font-style: normal;
 }
 
-/* line 33, ../../styles/main.scss */
+/* line 34, ../../styles/main.scss */
 h1 {
   font-size: 3em;
 }
 
-/* line 37, ../../styles/main.scss */
+/* line 38, ../../styles/main.scss */
 h2 {
   font-size: 2em;
   margin: 2.5em 0 1.8em;
 }
 
-/* line 42, ../../styles/main.scss */
+/* line 43, ../../styles/main.scss */
 p, figure {
   margin: 1.8em 0;
 }
 
-/* line 46, ../../styles/main.scss */
+/* line 47, ../../styles/main.scss */
 figcaption {
   text-align: right;
   font-size: 0.8em;
@@ -515,24 +515,24 @@ figcaption {
   color: #b3b3b3;
 }
 
-/* line 54, ../../styles/main.scss */
+/* line 55, ../../styles/main.scss */
 a {
   color: gray;
   font-style: italic;
 }
-/* line 57, ../../styles/main.scss */
+/* line 58, ../../styles/main.scss */
 a:hover, a:active {
   color: #4d4d4d;
 }
 
-/* line 62, ../../styles/main.scss */
+/* line 63, ../../styles/main.scss */
 .container {
   overflow: hidden;
   *zoom: 1;
   position: relative;
 }
 
-/* line 67, ../../styles/main.scss */
+/* line 68, ../../styles/main.scss */
 .highlight {
   background-color: #f2f2f2;
   padding: 1em;
@@ -544,19 +544,19 @@ a:hover, a:active {
   border-radius: 5px;
 }
 
-/* line 74, ../../styles/main.scss */
+/* line 75, ../../styles/main.scss */
 .date > time {
   font-style: italic;
   color: #cccccc;
 }
 
-/* line 79, ../../styles/main.scss */
+/* line 80, ../../styles/main.scss */
 .gravatar {
   position: absolute;
   margin-top: 1.8em;
 }
 
-/* line 84, ../../styles/main.scss */
+/* line 85, ../../styles/main.scss */
 .epilogue {
   display: block;
   font-style: italic;
@@ -564,129 +564,129 @@ a:hover, a:active {
   font-size: 1.2em;
   margin: 3.6em 2em;
 }
-/* line 90, ../../styles/main.scss */
+/* line 91, ../../styles/main.scss */
 .epilogue a {
   color: #b3b3b3;
 }
-/* line 92, ../../styles/main.scss */
+/* line 93, ../../styles/main.scss */
 .epilogue a:hover, .epilogue a:active {
   color: #cccccc;
 }
 
-/* line 98, ../../styles/main.scss */
+/* line 99, ../../styles/main.scss */
 #header, #content, #comments, #footer {
   width: 100%;
 }
-/* line 100, ../../styles/main.scss */
+/* line 101, ../../styles/main.scss */
 #header > .container, #content > .container, #comments > .container, #footer > .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 960px;
 }
 
-/* line 107, ../../styles/main.scss */
+/* line 108, ../../styles/main.scss */
 #content, #comments, #footer {
   padding-bottom: 2em;
 }
 
-/* line 111, ../../styles/main.scss */
+/* line 112, ../../styles/main.scss */
 #header {
   background-color: #4d4d4d;
   border-bottom: 3px solid #b3b3b3;
 }
-/* line 114, ../../styles/main.scss */
+/* line 115, ../../styles/main.scss */
 #header a {
   color: #595959;
 }
-/* line 116, ../../styles/main.scss */
+/* line 117, ../../styles/main.scss */
 #header a:hover, #header a:active {
   color: gray;
 }
-/* line 120, ../../styles/main.scss */
+/* line 121, ../../styles/main.scss */
 #header h1 {
   margin: 0.8em 0 1em;
 }
 
-/* line 125, ../../styles/main.scss */
+/* line 126, ../../styles/main.scss */
 #content {
   background-color: white;
 }
 
-/* line 129, ../../styles/main.scss */
+/* line 130, ../../styles/main.scss */
 #comments {
   padding-top: 2em;
   background-color: #f2f2f2;
 }
 
-/* line 134, ../../styles/main.scss */
+/* line 135, ../../styles/main.scss */
 #footer {
   background-color: #b3b3b3;
   color: gray;
 }
-/* line 137, ../../styles/main.scss */
+/* line 138, ../../styles/main.scss */
 #footer p {
   margin-left: 140px;
 }
 
-/* line 143, ../../styles/main.scss */
+/* line 144, ../../styles/main.scss */
 .post > footer .next {
   float: right;
 }
-/* line 146, ../../styles/main.scss */
+/* line 147, ../../styles/main.scss */
 .post > footer .previous {
   float: left;
 }
 
 @media only screen and (max-width: 568px) {
-  /* line 152, ../../styles/main.scss */
+  /* line 153, ../../styles/main.scss */
   body {
     font-size: 1em;
     line-height: 1.5;
   }
 
-  /* line 156, ../../styles/main.scss */
+  /* line 157, ../../styles/main.scss */
   h1 {
     font-size: 2.5em;
   }
 
-  /* line 159, ../../styles/main.scss */
+  /* line 160, ../../styles/main.scss */
   h2 {
     font-size: 1.5em;
   }
 
-  /* line 163, ../../styles/main.scss */
+  /* line 164, ../../styles/main.scss */
   .gravatar {
     width: 60px;
     height: 60px;
   }
 
-  /* line 168, ../../styles/main.scss */
+  /* line 169, ../../styles/main.scss */
   #footer p {
     margin-left: 73px;
   }
 
-  /* line 173, ../../styles/main.scss */
+  /* line 174, ../../styles/main.scss */
   .post > footer .next .label, .post > footer .previous .label {
     display: none;
   }
-  /* line 176, ../../styles/main.scss */
+  /* line 177, ../../styles/main.scss */
   .post > footer .next a, .post > footer .previous a {
     text-decoration: none;
   }
-  /* line 180, ../../styles/main.scss */
+  /* line 181, ../../styles/main.scss */
   .post > footer .icon {
     font-size: 2em;
   }
-  /* line 183, ../../styles/main.scss */
+  /* line 184, ../../styles/main.scss */
   .post > footer .next .icon:before {
     content: "\2192";
   }
-  /* line 186, ../../styles/main.scss */
+  /* line 187, ../../styles/main.scss */
   .post > footer .previous .icon:before {
     content: "\2190";
   }
 
-  /* line 191, ../../styles/main.scss */
+  /* line 192, ../../styles/main.scss */
   .epilogue {
     display: block;
     font-style: italic;
@@ -694,11 +694,11 @@ a:hover, a:active {
     font-size: 1.1em;
     margin: 3em 1em;
   }
-  /* line 197, ../../styles/main.scss */
+  /* line 198, ../../styles/main.scss */
   .epilogue a {
     color: #b3b3b3;
   }
-  /* line 199, ../../styles/main.scss */
+  /* line 200, ../../styles/main.scss */
   .epilogue a:hover, .epilogue a:active {
     color: #cccccc;
   }
