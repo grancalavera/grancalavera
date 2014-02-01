@@ -7,13 +7,13 @@ categories: code
 tags: jekyll grunt javascript
 ---
 
-On my [previous post]({% post_url 2014-01-19-jekyll-and-grunt-1-of-3 %}) I explained how I'm using Jekyll in this blog. The setup is pretty much the same you get out of the box, with just some minor changes to accomodate automated builds with Grunt and deployments to GitHub Pages. Since the last time, I updated the [project structure]({% post_url 2014-01-19-jekyll-and-grunt-1-of-3 %}#project_structure) outlined in the Jekyll post. I decided to add all the hidden files, because it gives context on the tools I'm using and the building process itself.
+I've already talked about how I'm [using Jekyll to run this blog]({% post_url 2014-01-19-jekyll-and-grunt-1-of-3 %}), now I'm going to talk about [Grunt](http://gruntjs.com). For the sake of clarity, you can assume Jekyll is running on the background all the time, re-generating posts and pages when something changes in the ```jekyll``` directory. Checkout the updated [project structuree]({% post_url 2014-01-19-jekyll-and-grunt-1-of-3 %}#project_structure) to get an idea of the file layout for this project.
 
 ### Grunt
 
-Grunt, ["The JavaScript Task Runner"](http://gruntjs.com/), is a command line tool
+This is a very simple website, but even so I wanted as much comfort as possible when working in it. I decided upfront I was going to use as least JavaScript as I possible could, and the simplest possible layout I could. That doesn't mean I'm willing to perform the same tasks over and over again, or that I'm OK with making stupid mistakes: automatic SASS preprocessing and JavaScript linting was something I wanted to get working even before writing the first post.
 
-automating, expressive, intention, repeatable, portable
+With those two goals in mind, my next task was to figure out a comfortable workflow to get the design together, and that involved not using Photoshop at all. I went for working directly on the code: small changes on my SASS files should reflect immediately on the browser. That's pretty much straight forward when working on a pure grunt project, you just drop [grunt-contrib-connect](https://npmjs.org/package/grunt-contrib-connect) in the mix and let it serve your static files, but for this blog I'm using the Jekyll server.
 
 community, ecosystem, plugins
 
