@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
     pkg: pkg,
 
-    gh_url: 'git@github.com:grancalavera/grancalavera.git',
+    gh_url: pkg.repository.url,
 
     styles_src: [
       'bower_components/normalize-css/normalize.css',

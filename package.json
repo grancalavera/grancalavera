@@ -4,18 +4,18 @@
   "description": "Leon Coto's personal blog",
   "main": "index.html",
   "scripts": {
-    "test": "jekyll serve"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/grancalavera/grancalavera.github.com.git"
+    "url": "git@github.com:grancalavera/grancalavera.git"
   },
   "author": {
     "name": "Leon Coto"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/grancalavera/grancalavera.github.com/issues"
+    "url": "https://github.com/grancalavera/grancalavera/issues"
   },
   "devDependencies": {
     "grunt-contrib-compass": "~0.7.0",
