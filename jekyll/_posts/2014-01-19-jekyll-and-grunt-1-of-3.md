@@ -98,6 +98,6 @@ $ jekyll build --config _config.yml,_config-production.yml
 
 The last command will concatenate both of my configuration files, overriding any flags in ```_config.yml``` with flags from ```_config-production.yml```. Currently no flags are overridden, just the one ```production``` flag gets appended to the final production configuration.
 
-<p class="epilogue">If you want to learn more about how to get started with Jekyll, head straight to the [Jekyll documentation](http://jekyllrb.com/docs/home/). I have been using [Grunt](http://gruntjs.com) to build my GitHub Pages projects for a while now, and with a little tinkering it was very easy to put a build process together for Jekyll and Grunt. In my next post I'll be explaining such build process in detail, so please stay in tune!</p>
+<em class="epilogue">If you want to learn more about how to get started with Jekyll, head straight to the [Jekyll documentation](http://jekyllrb.com/docs/home/). I have been using [Grunt](http://gruntjs.com) to build my GitHub Pages projects for a while now, and with a little tinkering it was very easy to put a build process together for Jekyll and Grunt. In my next post I'll be explaining such build process in detail, so please stay in tune!</em>
 
 
