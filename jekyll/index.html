@@ -10,13 +10,7 @@ layout: default
 {% assign next = post.next %}
 {% assign previous = post.previous %}
 {% assign date = post.date %}
+{% assign comments = post.comments %}
 
 {% include post-detail.html %}
 
-{% if post.comments %}
-<section id="comments">
-  <div class="container">
-    <p><a href="{{ post.url }}#disqus_thread" title="Comments">Comments</a></p>
-  </div>
-</section>
-{% endif %}

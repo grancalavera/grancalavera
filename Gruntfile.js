@@ -223,8 +223,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'build',
     'shell:jk_build',
-    'connect',
-    'watch'
     ]);
 
 };
