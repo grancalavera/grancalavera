@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Gran Calavera</title>
+    <link>http://grancalavera.com</link>
+    <description>RSS feed for Gran Calavera</description>
+    <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+    <item>
+      <title>Jekyll &amp; Grunt, part 2</title>
+      <link>http://grancalavera.com/code/2014/02/02/jekyll-and-grunt-2-of-3/</link>
+      <description>&lt;p&gt;If you read my &lt;a href=&quot;/code/2014/01/19/jekyll-and-grunt-1-of-3/&quot;&gt;previous post&lt;/a&gt; then you already know I&amp;#39;m using Jekyll to generate this website. Today I want to share how &lt;a href=&quot;http://gruntjs.com&quot;&gt;Grunt&lt;/a&gt; makes hacking and blogging so much more pleasurable around here.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+      <guid>http://grancalavera.com/code/2014/02/02/jekyll-and-grunt-2-of-3/</guid>
+      <dc:date>2014-02-02T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>Jekyll &amp; Grunt</title>
+      <link>http://grancalavera.com/code/2014/01/19/jekyll-and-grunt-1-of-3/</link>
+      <description>&lt;p&gt;I have already tried to start a blog in the past. Do a quick search for &lt;a href=&quot;http://web.archive.org/web/20040415000000*/http://grancalavera.com&quot;&gt;grancalavera.com in the Wayback Machine&lt;/a&gt; and you&amp;#39;ll find scattered versions of lonely holding pages all the way back to 2004: anything from simple HTML pages, Blogger templates and even one broken Flex microsite.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>http://grancalavera.com/code/2014/01/19/jekyll-and-grunt-1-of-3/</guid>
+      <dc:date>2014-01-19T00:00:00+00:00</dc:date>
+    </item>
+    <item>
+      <title>grancalavera.com</title>
+      <link>http://grancalavera.com/stuff/2014/01/15/grancalavera/</link>
+      <description>&lt;p&gt;After many years of procrastination and over thinking, I&amp;#39;m finally working on my personal blog. I&amp;#39;m still not 100% sure of what kind of blog will it be, but I have some ideas and I&amp;#39;ll be testing them little by little over time.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>http://grancalavera.com/stuff/2014/01/15/grancalavera/</guid>
+      <dc:date>2014-01-15T00:00:00+00:00</dc:date>
+    </item>
+    <dc:date>2014-02-02T00:00:00+00:00</dc:date>
+  </channel>
+</rss>
