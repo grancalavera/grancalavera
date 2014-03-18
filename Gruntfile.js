@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       styles: {
-        files: 'styles/**/*.scss',
+        files: 'jekyll/styles/**/*.scss',
         tasks: ['compass', 'concat:styles']
       },
       scripts: {
@@ -113,8 +113,10 @@ module.exports = function(grunt) {
     compass: {
       main: {
         options: {
+          basePath: 'jekyll',
           sassDir: 'styles',
-          cssDir: '.tmp/css'
+          cssDir: '../.tmp/css',
+          imagesDir: 'img'
         }
       }
     },

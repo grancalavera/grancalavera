@@ -1,5 +1,7 @@
 @import "compass/utilities/general/clearfix";
+@import "compass/typography/text/replacement";
 @import "compass/css3/border-radius";
+
 
 $c_base: rgb(0, 0, 0);
 $c_dark: lighten($c_base, 30%);
@@ -84,6 +86,7 @@ a {
 
 .epilogue {
   display: block;
+  display: inline-block;
   font-style: italic;
   color: $c_med;
   font-size: 1.2em;
@@ -94,6 +97,11 @@ a {
       color: $c_lighter;
     }
   }
+}
+
+.rss {
+  @include replace-text-with-dimensions("rss.png");
+  display: inline-block;
 }
 
 #header, #content, #comments, #footer {
@@ -202,5 +210,4 @@ a {
       }
     }
   }
-
 }

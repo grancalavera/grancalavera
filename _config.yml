@@ -6,3 +6,5 @@ destination: gh-pages
 source: jekyll
 permalink: pretty
 relative_permalinks: false
+url: http://grancalavera.com
+exclude: ['styles']
