@@ -21,7 +21,7 @@
 
 &lt;p&gt;And then I thought... what if?&lt;/p&gt;
 
-&lt;p&gt;What if I build a command line application that communicates with Parse and deletes and creates all that mock mock data on more than one class? Or any class? Maybe even do stuff with users and manage that ACL stuff? So, obviously, I spent the next 2 hours searching for an awesome name that wasn&amp;#39;t already taken in the npm registry.&lt;/p&gt;
+&lt;p&gt;What if I build a command line application that communicates with Parse and deletes and creates all that mock data on more than one class? Or any class? Maybe even do stuff with users and manage that ACL stuff? So, obviously, I spent the next 2 hours searching for an awesome name that wasn&amp;#39;t already taken in the npm registry.&lt;/p&gt;
 
 &lt;p&gt;And that&amp;#39;s how a couple of months ago I started writing &lt;a href=&quot;https://bitbucket.org/mcsaatchi/fathom&quot;&gt;Fathom&lt;/a&gt;. Since then I&amp;#39;ve been using it with Cucumber and Ruby and I must say it is pretty awesome. It has &lt;a href=&quot;https://bitbucket.org/mcsaatchi/fathom/issues?status=new&amp;amp;status=open&quot;&gt;some rough edges&lt;/a&gt;, but still, I think there&amp;#39;s something going on in there.&lt;/p&gt;
 
