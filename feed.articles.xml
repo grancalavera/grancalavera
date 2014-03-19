@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Gran Calavera - Articles</title>
+		<description></description>
+		<link>http://grancalavera.com</link>
+		<atom:link href="http://grancalavera.com/feed.articles.xml" rel="self" type="application/rss+xml" />
+		
+			
+			<item>
+				<title>Fathom: a Node.js command line tool for Parse</title>
+				<description>&lt;p&gt;We&amp;#39;ve been using &lt;a href=&quot;https://parse.com/&quot;&gt;Parse&lt;/a&gt; for a while at the office, but mainly for small projects and pet projects. The thing is, the more we use it, the more we want to use it again. So, there comes this project and it isn&amp;#39;t that small and we said: &amp;quot;lets build it with Parse and to test it with Cucumber&amp;quot;. I start working on it, and by the second day there I was searching the interwebs for a way to drop an entire Parse class using the REST API. Good luck with that.&lt;/p&gt;
+
+&lt;p&gt;As it Turned out, to be able to do any trivial testing you need to constantly mess around with your application&amp;#39;s data: you need to mock up models before running your features and scenarios, then wipe them out and mock them up again and again.&lt;/p&gt;
+
+&lt;p&gt;To cope with all the mocking and wiping, I decided to take the Grunt route, just wrote a simple task to delete all the objects from a Parse class (my only class at that stage) and that was it. But after a couple of times of typing:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt; ~ grunt parse:delete
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;... I started to feel increasingly irritated. Creeping thoughts started to haunt me, I figured I needed to create mock data on not just one but many different classes. Frustration and despair fell over me, I was doomed by my very own short-sightedness.&lt;/p&gt;
+
+&lt;p&gt;And then I thought... what if?&lt;/p&gt;
+
+&lt;p&gt;What if I build a command line application that communicates with Parse and deletes and creates all that mock mock data on more than one class? Or any class? Maybe even do stuff with users and manage that ACL stuff? So, obviously, I spent the next 2 hours searching for an awesome name that wasn&amp;#39;t already taken in the npm registry.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;#39;s how a couple of months ago I started writing &lt;a href=&quot;https://bitbucket.org/mcsaatchi/fathom&quot;&gt;Fathom&lt;/a&gt;. Since then I&amp;#39;ve been using it with Cucumber and Ruby and I must say it is pretty awesome. It has &lt;a href=&quot;https://bitbucket.org/mcsaatchi/fathom/issues?status=new&amp;amp;status=open&quot;&gt;some rough edges&lt;/a&gt;, but still, I think there&amp;#39;s something going on in there.&lt;/p&gt;
+
+&lt;p&gt;If you feel like giving it a try, just go:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;~ npm install -g fathom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Drop me a line if you like it, or if you think it makes sense, or if you think it makes no sense. Also, take a look a the &lt;a href=&quot;https://bitbucket.org/mcsaatchi/fathom/src/c8fc1d5df504c0ebc2d1ce12685070c76dc54c21/readme.md?at=master&quot;&gt;documentation&lt;/a&gt;, there are some features that I&amp;#39;m planning to release in the following weeks.&lt;/p&gt;
+</description>
+				<pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+				<link>http://grancalavera.com/2014/03/18/fathom-a-cli-tool-for-parse/</link>
+				<guid isPermaLink="true">http://grancalavera.com/2014/03/18/fathom-a-cli-tool-for-parse/</guid>
+			</item>
+			
+		
+			
+			<item>
+				<title>Jekyll &amp; Grunt, part 2</title>
+				<description>&lt;p&gt;If you read my &lt;a href=&quot;/code/2014/01/19/jekyll-and-grunt-1-of-3/&quot;&gt;previous post&lt;/a&gt; then you already know I&amp;#39;m using Jekyll to generate this website. Today I want to share how &lt;a href=&quot;http://gruntjs.com&quot;&gt;Grunt&lt;/a&gt; makes hacking and blogging so much more pleasurable around here.&lt;/p&gt;
+
+&lt;h3&gt;Simple and Beautiful&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#39;m an hedonistic person, I like when things look pretty, work in a quiet and efficient manner and make you feel comfortable: I like working on a pleasurable way. No need to say, but I&amp;#39;ve never liked any blogging platform very much.&lt;/p&gt;
+
+&lt;p&gt;But Jekyll is so cool, it just sits there, diligently building your website as you move &lt;em&gt;plain text files&lt;/em&gt; around. And that&amp;#39;s pretty much it, If you can move text files to the right places, Jekyll will carry on building your website and keeping everything shiny and neat. Enters Grunt.&lt;/p&gt;
+
+&lt;p&gt;Grunt will do everything else for you: transform text files from one format to another and then moving them around for you, gently poking Jekyll to put all the pieces together, and finally taking the whole lot and sending it to &lt;a href=&quot;http://pages.github.com&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;List of available tasks&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;~ grunt -h
+
+# Grunt&amp;#39;s help here...
+
+Available tasks
+       compass  Compile Sass to CSS using Compass *
+         watch  Run predefined tasks whenever watched files change.
+        jshint  Validate files with JSHint. *
+        concat  Concatenate files. *
+        cssmin  Minify CSS files *
+       connect  Start a connect web server. *
+         clean  Clean files and folders. *
+         shell  Run shell commands *
+       gh_init  Alias for &amp;quot;clean:gh_pages&amp;quot;, &amp;quot;shell:gh_clone&amp;quot;, &amp;quot;shell:gh_init&amp;quot;
+                tasks.
+      gh_reset  Alias for &amp;quot;clean:gh_pages&amp;quot;, &amp;quot;shell:gh_clone&amp;quot;,
+                &amp;quot;shell:gh_checkout&amp;quot; tasks.
+         build  Alias for &amp;quot;jshint&amp;quot;, &amp;quot;clean:tmp&amp;quot;, &amp;quot;compass&amp;quot;, &amp;quot;concat&amp;quot; tasks.
+        deploy  Alias for &amp;quot;build&amp;quot;, &amp;quot;shell:jk_build_production&amp;quot;, &amp;quot;shell:gh_push&amp;quot;
+                tasks.
+       default  Alias for &amp;quot;build&amp;quot;, &amp;quot;shell:jk_build&amp;quot;, &amp;quot;connect&amp;quot;, &amp;quot;watch&amp;quot; tasks.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;The list above contains both Grunt task contributed by the community, as well as tasks that I configured to build and manage this website. Feel free to read the &lt;a href=&quot;https://github.com/grancalavera/grancalavera/blob/master/Gruntfile.js&quot;&gt;Gruntfile.js&lt;/a&gt; to see all the implementation details.&lt;/p&gt;
+
+&lt;h3&gt;The Workflow&lt;/h3&gt;
+
+&lt;p&gt;With this setup I can make design, code and content changes, while getting immediate feedback in the browser:&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;Hacking and blogging&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;~ grunt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Once everything is ready, I can deploy my changes with a single command:&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;Deploying to GitHub pages&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;~ grunt deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Sometimes the &lt;code&gt;gh-pages&lt;/code&gt; directory gets messed up, mainly because I delete it by mistake.
+Even when Grunt can recreate the missing directory just fine, the &lt;code&gt;.git&lt;/code&gt; directory with all the GitHub Pages deployment details inside it gets lost, which in turn contains all the deployment details. That means loosing the &lt;code&gt;gh-pages&lt;/code&gt; directory breaks my deployments. No biggie:&lt;/p&gt;
+
+&lt;p&gt;&lt;figure&gt;
+&lt;figcaption&gt;Housekeeping and troubleshooting&lt;/figcaption&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;~ grunt gh_reset
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/figcaption&gt;&lt;/p&gt;
+
+&lt;h3&gt;Would I use it again?&lt;/h3&gt;
+
+&lt;p&gt;Absolutely yes, in fact I have already started a new project using Jekyll and very similar workflow. Also, I&amp;#39;m planning to build a &lt;a href=&quot;http://yeoman.io&quot;&gt;Yeoman&lt;/a&gt; generator to make the process of starting new Jekyll projects easier.&lt;/p&gt;
+
+&lt;p&gt;&lt;em class=&quot;epilogue&quot;&gt;Hopefully you are enjoying my ramblings. Watch this space for the third and final part on this series. I&amp;#39;ll talk about Yeoman and Disqus integration (yes, you can &lt;a href=&quot;/code/2014/02/02/jekyll-and-grunt-2-of-3/#disqus_thread&quot;&gt;comment on this&lt;/a&gt;).&lt;/em&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
+				<link>http://grancalavera.com/code/2014/02/02/jekyll-and-grunt-2-of-3/</link>
+				<guid isPermaLink="true">http://grancalavera.com/code/2014/02/02/jekyll-and-grunt-2-of-3/</guid>
+			</item>
+			
+		
+			
+			<item>
+				<title>Jekyll &amp; Grunt</title>
+				<description>&lt;p&gt;I have already tried to start a blog in the past. Do a quick search for &lt;a href=&quot;http://web.archive.org/web/20040415000000*/http://grancalavera.com&quot;&gt;grancalavera.com in the Wayback Machine&lt;/a&gt; and you&amp;#39;ll find scattered versions of lonely holding pages all the way back to 2004: anything from simple HTML pages, Blogger templates and even one broken Flex microsite.&lt;/p&gt;
+
+&lt;p&gt;One of the reasons why I have started over and over again so many times is that I&amp;#39;ve never been able to choose a blogging platform. I&amp;#39;ve always wanted to be able to do stuff without having to spend loads of time reading through pages and pages of documentation, obscure details on server configuration and folder structures.&lt;/p&gt;
+
+&lt;h3&gt;Jekyll&lt;/h3&gt;
+
+&lt;p&gt;Having played around with &lt;a href=&quot;http://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; in the last couple of years, I decided to try &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, the blog-aware static site generator used by GitHub on their GitHub Pages. Jekyll has proved to be dead-simple to use: once you get it running you can get your head around it in 20 minutes.&lt;/p&gt;
+
+&lt;figure id=&quot;project_structure&quot;&gt;
+&lt;figcaption&gt;project structure&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;  grancalavera.com
+* ├── .tmp/
+* ├── bower_components/
+* ├── gh-pages/
+  ├── jekyll/
+  │   ├── _drafts/
+  │   ├── _includes/
+  │   ├── _layouts/
+  │   ├── _posts/
+  │ * ├── css/
+  │ * ├── js/
+  │   ├── CNAME
+  │   └── index.html
+* ├── node_modules/
+  ├── scripts/
+  ├── styles/
+  ├── .gitignore
+  ├── _config-production.yml
+  ├── _config.yml
+  ├── bower.json
+  ├── Gemfile
+  ├── Gemfile.lock
+  ├── grancalavera.com.sublime-project
+  ├── Gruntfile.js
+  ├── package.json
+  └── README.md
+
+* Ignored in .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I&amp;#39;m using the out of the box &lt;code&gt;config.yml&lt;/code&gt; configuration file as the configuration base for my project. I didn&amp;#39;t add any custom variables, just changed some of the default values, being the most important two &lt;code&gt;source&lt;/code&gt; and &lt;code&gt;destination&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;All the blog files live inside the &lt;code&gt;jekyll&lt;/code&gt; directory, instead of living directly under the root directory of the project. This allows me to keep all the content separate from the building process. Also, to make the use of GitHub Pages explicit, the site gets built into the &lt;code&gt;gh-pages&lt;/code&gt; directory instead of the default &lt;code&gt;_site&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;p&gt;There is a change I want to make: moving the configuration files from the root of the project to the &lt;code&gt;jekyll&lt;/code&gt; directory. This change would allow me to separate the blog building process from the blog content files, keep them in separate git repos, and use the same building process with more than one Jekyll site.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;_config.yml&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Gran Calavera&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;redcarpet&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;pygments&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;timezone&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Europe/London&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;destination&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;gh-pages&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;jekyll&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;pretty&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;relative_permalinks&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;The only difference between the base configuration file and the &lt;code&gt;_config-production.yml&lt;/code&gt; configuration file is the &lt;code&gt;production&lt;/code&gt; flag. I use this flath to toggle the livereload script &lt;em&gt;off&lt;/em&gt; and the Google Analytics script &lt;em&gt;on&lt;/em&gt; during production. I&amp;#39;ll go into the details on how I use the livereload script on my next post.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;_config-production.yml&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Using this setup, I can build the Jekyll site and work on my posts locally with this command:&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;local build&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll serve -w --drafts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;And build with this command when I&amp;#39;m ready to push my changes to GitHub:&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;production build&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;jekyll build --config _config.yml,_config-production.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;The last command will concatenate both of my configuration files, overriding any flags in &lt;code&gt;_config.yml&lt;/code&gt; with flags from &lt;code&gt;_config-production.yml&lt;/code&gt;. Currently no flags are overridden, just the one &lt;code&gt;production&lt;/code&gt; flag gets appended to the final production configuration.&lt;/p&gt;
+
+&lt;p&gt;&lt;em class=&quot;epilogue&quot;&gt;If you want to learn more about how to get started with Jekyll, head straight to the &lt;a href=&quot;http://jekyllrb.com/docs/home/&quot;&gt;Jekyll documentation&lt;/a&gt;. I have been using &lt;a href=&quot;http://gruntjs.com&quot;&gt;Grunt&lt;/a&gt; to build my GitHub Pages projects for a while now, and with a little tinkering it was very easy to put a build process together for Jekyll and Grunt. In my next post I&amp;#39;ll be explaining such build process in detail, so please stay in tune!&lt;/em&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
+				<link>http://grancalavera.com/code/2014/01/19/jekyll-and-grunt-1-of-3/</link>
+				<guid isPermaLink="true">http://grancalavera.com/code/2014/01/19/jekyll-and-grunt-1-of-3/</guid>
+			</item>
+			
+		
+			
+			<item>
+				<title>grancalavera.com</title>
+				<description>&lt;p&gt;After many years of procrastination and over thinking, I&amp;#39;m finally working on my personal blog. I&amp;#39;m still not 100% sure of what kind of blog will it be, but I have some ideas and I&amp;#39;ll be testing them little by little over time.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
+				<link>http://grancalavera.com/stuff/2014/01/15/grancalavera/</link>
+				<guid isPermaLink="true">http://grancalavera.com/stuff/2014/01/15/grancalavera/</guid>
+			</item>
+			
+		
+	</channel>
+</rss>

@@ -40,8 +40,10 @@
 <p>As it Turned out, to be able to do any trivial testing you need to constantly mess around with your application&#39;s data: you need to mock up models before running your features and scenarios, then wipe them out and mock them up again and again.</p>
 
 <p>To cope with all the mocking and wiping, I decided to take the Grunt route, just wrote a simple task to delete all the objects from a Parse class (my only class at that stage) and that was it. But after a couple of times of typing:</p>
+
 <div class="highlight"><pre><code class="text language-text" data-lang="text"> ~ grunt parse:delete
 </code></pre></div>
+
 <p>... I started to feel increasingly irritated. Creeping thoughts started to haunt me, I figured I needed to create mock data on not just one but many different classes. Frustration and despair fell over me, I was doomed by my very own short-sightedness.</p>
 
 <p>And then I thought... what if?</p>
@@ -51,8 +53,10 @@
 <p>And that&#39;s how a couple of months ago I started writing <a href="https://bitbucket.org/mcsaatchi/fathom">Fathom</a>. Since then I&#39;ve been using it with Cucumber and Ruby and I must say it is pretty awesome. It has <a href="https://bitbucket.org/mcsaatchi/fathom/issues?status=new&amp;status=open">some rough edges</a>, but still, I think there&#39;s something going on in there.</p>
 
 <p>If you feel like giving it a try, just go:</p>
+
 <div class="highlight"><pre><code class="text language-text" data-lang="text">~ npm install -g fathom
 </code></pre></div>
+
 <p>Drop me a line if you like it, or if you think it makes sense, or if you think it makes no sense. Also, take a look a the <a href="https://bitbucket.org/mcsaatchi/fathom/src/c8fc1d5df504c0ebc2d1ce12685070c76dc54c21/readme.md?at=master">documentation</a>, there are some features that I&#39;m planning to release in the following weeks.</p>
 
       </article>
