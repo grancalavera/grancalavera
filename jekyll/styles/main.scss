@@ -100,8 +100,11 @@ a {
 }
 
 .rss {
-  @include replace-text-with-dimensions("rss.png");
+  @include replace-text("rss.png");
   display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
 }
 
 #header, #content, #comments, #footer {
