@@ -21,7 +21,7 @@ To cope with all the mocking and wiping, I decided to take the Grunt route, just
 
 And then I thought... what if?
 
-What if I build a command line application that communicates with Parse and deletes and creates all that mock mock data on more than one class? Or any class? Maybe even do stuff with users and manage that ACL stuff? So, obviously, I spent the next 2 hours searching for an awesome name that wasn't already taken in the npm registry.
+What if I build a command line application that communicates with Parse and deletes and creates all that mock data on more than one class? Or any class? Maybe even do stuff with users and manage that ACL stuff? So, obviously, I spent the next 2 hours searching for an awesome name that wasn't already taken in the npm registry.
 
 And that's how a couple of months ago I started writing [Fathom](https://bitbucket.org/mcsaatchi/fathom). Since then I've been using it with Cucumber and Ruby and I must say it is pretty awesome. It has [some rough edges](https://bitbucket.org/mcsaatchi/fathom/issues?status=new&status=open), but still, I think there's something going on in there.
 
