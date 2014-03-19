@@ -521,126 +521,126 @@ a:hover, a:active {
   background-image: url('/img/rss.png?1395266260');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  width: 64px;
-  height: 64px;
   display: inline-block;
+  width: 32;
+  height: 32;
   background-size: 32px 32px;
 }
 
-/* line 108, ../../jekyll/styles/main.scss */
+/* line 110, ../../jekyll/styles/main.scss */
 #header, #content, #comments, #footer {
   width: 100%;
 }
-/* line 110, ../../jekyll/styles/main.scss */
+/* line 112, ../../jekyll/styles/main.scss */
 #header > .container, #content > .container, #comments > .container, #footer > .container {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 960px;
 }
 
-/* line 117, ../../jekyll/styles/main.scss */
+/* line 119, ../../jekyll/styles/main.scss */
 #content, #comments, #footer {
   padding-bottom: 2em;
 }
 
-/* line 121, ../../jekyll/styles/main.scss */
+/* line 123, ../../jekyll/styles/main.scss */
 #header {
   background-color: #4d4d4d;
   border-bottom: 3px solid #b3b3b3;
 }
-/* line 124, ../../jekyll/styles/main.scss */
+/* line 126, ../../jekyll/styles/main.scss */
 #header a {
   color: #595959;
 }
-/* line 126, ../../jekyll/styles/main.scss */
+/* line 128, ../../jekyll/styles/main.scss */
 #header a:hover, #header a:active {
   color: gray;
 }
-/* line 130, ../../jekyll/styles/main.scss */
+/* line 132, ../../jekyll/styles/main.scss */
 #header h1 {
   margin: 0.8em 0 1em;
 }
 
-/* line 135, ../../jekyll/styles/main.scss */
+/* line 137, ../../jekyll/styles/main.scss */
 #content {
   background-color: white;
 }
 
-/* line 139, ../../jekyll/styles/main.scss */
+/* line 141, ../../jekyll/styles/main.scss */
 #comments {
   padding-top: 2em;
   background-color: #f2f2f2;
 }
 
-/* line 144, ../../jekyll/styles/main.scss */
+/* line 146, ../../jekyll/styles/main.scss */
 #footer {
   background-color: #b3b3b3;
   color: gray;
 }
-/* line 147, ../../jekyll/styles/main.scss */
+/* line 149, ../../jekyll/styles/main.scss */
 #footer p {
   margin-left: 140px;
 }
 
-/* line 153, ../../jekyll/styles/main.scss */
+/* line 155, ../../jekyll/styles/main.scss */
 .post > footer .next {
   float: right;
 }
-/* line 156, ../../jekyll/styles/main.scss */
+/* line 158, ../../jekyll/styles/main.scss */
 .post > footer .previous {
   float: left;
 }
 
 @media only screen and (max-width: 568px) {
-  /* line 162, ../../jekyll/styles/main.scss */
+  /* line 164, ../../jekyll/styles/main.scss */
   body {
     font-size: 1em;
     line-height: 1.5;
   }
 
-  /* line 166, ../../jekyll/styles/main.scss */
+  /* line 168, ../../jekyll/styles/main.scss */
   h1 {
     font-size: 2.5em;
   }
 
-  /* line 169, ../../jekyll/styles/main.scss */
+  /* line 171, ../../jekyll/styles/main.scss */
   h2 {
     font-size: 1.5em;
   }
 
-  /* line 173, ../../jekyll/styles/main.scss */
+  /* line 175, ../../jekyll/styles/main.scss */
   .gravatar {
     width: 60px;
     height: 60px;
   }
 
-  /* line 178, ../../jekyll/styles/main.scss */
+  /* line 180, ../../jekyll/styles/main.scss */
   #footer p {
     margin-left: 73px;
   }
 
-  /* line 183, ../../jekyll/styles/main.scss */
+  /* line 185, ../../jekyll/styles/main.scss */
   .post > footer .next .label, .post > footer .previous .label {
     display: none;
   }
-  /* line 186, ../../jekyll/styles/main.scss */
+  /* line 188, ../../jekyll/styles/main.scss */
   .post > footer .next a, .post > footer .previous a {
     text-decoration: none;
   }
-  /* line 190, ../../jekyll/styles/main.scss */
+  /* line 192, ../../jekyll/styles/main.scss */
   .post > footer .icon {
     font-size: 2em;
   }
-  /* line 193, ../../jekyll/styles/main.scss */
+  /* line 195, ../../jekyll/styles/main.scss */
   .post > footer .next .icon:before {
     content: "\2192";
   }
-  /* line 196, ../../jekyll/styles/main.scss */
+  /* line 198, ../../jekyll/styles/main.scss */
   .post > footer .previous .icon:before {
     content: "\2190";
   }
 
-  /* line 201, ../../jekyll/styles/main.scss */
+  /* line 203, ../../jekyll/styles/main.scss */
   .epilogue {
     display: block;
     font-style: italic;
@@ -648,11 +648,11 @@ a:hover, a:active {
     font-size: 1.1em;
     margin: 3em 1em;
   }
-  /* line 207, ../../jekyll/styles/main.scss */
+  /* line 209, ../../jekyll/styles/main.scss */
   .epilogue a {
     color: #b3b3b3;
   }
-  /* line 209, ../../jekyll/styles/main.scss */
+  /* line 211, ../../jekyll/styles/main.scss */
   .epilogue a:hover, .epilogue a:active {
     color: #cccccc;
   }
