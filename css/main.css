@@ -522,8 +522,8 @@ a:hover, a:active {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   display: inline-block;
-  width: 32;
-  height: 32;
+  width: 32px;
+  height: 32px;
   background-size: 32px 32px;
 }
 
