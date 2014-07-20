@@ -7,6 +7,114 @@
 		<atom:link href="http://grancalavera.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Swift Double Dispatch Pattern</title>
+				<description>&lt;p&gt;I&amp;#39;ve been playing around with Swift since the day after it was announced and I must say I like it very much. So much my current pet project is a game built with Swift and SpriteKit.&lt;/p&gt;
+
+&lt;p&gt;My game uses the physics engine shipped with SpriteKit out of the box, and most of what is does is making decisions based on information derived from &lt;code&gt;SKPhyisicsContact&lt;/code&gt; instances. Up until this weekend, most of what I&amp;#39;ve done just involved managing a collision between two instances of the same class, so I&amp;#39;ve been able to make progress just following the documentation.&lt;/p&gt;
+
+&lt;p&gt;But now I&amp;#39;ve reached a point when I&amp;#39;m starting to understand what I&amp;#39;m actually doing, and new collisions between different classes are now visible in the horizon. If you read through the &lt;a href=&quot;https://developer.apple.com/library/ios/documentation/GraphicsAnimation/Conceptual/SpriteKit_PG/Physics/Physics.html&quot;&gt;Simulating Physics&lt;/a&gt; on the SpriteKit Programming Guide, and pass the naive &lt;code&gt;didBeginContact&lt;/code&gt; implementation, you&amp;#39;ll read:&lt;/p&gt;
+
+&lt;blockquote&gt;
+Consider studying the Double Dispatch Pattern and using it to farm out the work to other objects in the system. Embedding all of the logic in the scene can result in long, complicated contact delegate methods that are difficult to read.
+&lt;/blockquote&gt;
+
+&lt;p&gt;The documentation links to the &lt;a href=&quot;http://en.wikipedia.org/wiki/Double_dispatch&quot;&gt;Double Dispatch pattern&lt;/a&gt; article in Wikipedia, where you can find a link to the &lt;a href=&quot;http://en.wikipedia.org/wiki/Visitor_pattern&quot;&gt;Visitor pattern&lt;/a&gt; article, which is what you ultimately need to use given that &lt;a href=&quot;http://stackoverflow.com/questions/24014045/does-swift-have-dynamic-dispatch-and-virtual-methods&quot;&gt;Swift doesn&amp;#39;t have dynamic dispatch&lt;/a&gt;. If you look around, you&amp;#39;ll find an example of &lt;a href=&quot;http://stackoverflow.com/questions/19882396/double-dispatch-for-collision-handling-with-spritekit&quot;&gt;double dispatch using Objective-C&lt;/a&gt;, which is very similar to what I was looking for but not exactly the same.&lt;/p&gt;
+
+&lt;p&gt;Following is my own implementation of simulated double dispatch using the visitor pattern, which is based almost exclusively on the visitor pattern article from Wikipedia.&lt;/p&gt;
+
+&lt;p&gt;Instead of using the article&amp;#39;s naming convention, I&amp;#39;m naming my objects in a way that the actually make sense in the context of my application:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Visitor&lt;/code&gt; is named &lt;code&gt;ContactHandler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Element&lt;/code&gt; is named  &lt;code&gt;GameObject&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Visitor.visit&lt;/code&gt; is named  &lt;code&gt;ContactHandler.contactWith&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Element.accept&lt;/code&gt; is named  &lt;code&gt;GameObject.handleContact&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;Simulated double dispatch pattern implemented in Swift&lt;/figcaption&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Foundation&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SpriteKit&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ContactHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;object:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GameObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withObjec:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GameObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;withObjec&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;contactWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withObject:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;A Bar made contact with a \(object.className)&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;contactWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withObjec:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;A Foo made contact with a \(object.className)&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;GameObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SKNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;contactHandler:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ContactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;contactHandler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;object:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withHandler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GameObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withHandler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;withHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contactWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;object:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GameObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;withHandler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ContactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;withHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contactWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;object:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;handler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;handler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;handler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;handleContact&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;handler:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;contactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;If you run this code from a Playground you should get the following output:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;A Foo made contact with a _TtC11lldb_expr_03Foo
+A Foo made contact with a _TtC11lldb_expr_03Bar
+A Bar made contact with a _TtC11lldb_expr_03Bar
+A Bar made contact with a _TtC11lldb_expr_03Foo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;m creating a &lt;code&gt;ContactHandler&lt;/code&gt; instance in each one of my &lt;code&gt;GameObject&lt;/code&gt; instances at construction time. In the future, I&amp;#39;ll be creating &lt;code&gt;ContactHandler&lt;/code&gt; specializations, most likely by conformance to a protocol rather than by inheritance. I hope that by doing so I&amp;#39;ll be able to decouple contact handling while at the same time encapsulate the details in each &lt;code&gt;GameObject&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Something to notice is that your &lt;code&gt;ContactHandler&lt;/code&gt; must not inherit from any existing Objective-C object. For instance:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ContactHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Will produce the following output:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;A Bar made contact with a _TtC11lldb_expr_03Foo
+A Bar made contact with a _TtC11lldb_expr_03Bar
+A Bar made contact with a _TtC11lldb_expr_03Bar
+A Bar made contact with a _TtC11lldb_expr_03Foo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;What seems to be happening there is that &lt;code&gt;ContactHandler&lt;/code&gt; ends up ignoring the dynamic type of the &lt;code&gt;GameObject&lt;/code&gt; and always resolves with the first implementation it finds for &lt;code&gt;contactWith&lt;/code&gt;. Do you know why this happens? I&amp;#39;d really appreciate any hints around this one.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 20 Jul 2014 00:00:00 +0100</pubDate>
+				<link>http://grancalavera.com/2014/07/20/swift-double-dispatch/</link>
+				<guid isPermaLink="true">http://grancalavera.com/2014/07/20/swift-double-dispatch/</guid>
+			</item>
+		
+			<item>
 				<title>Fathom: a Node.js command line tool for Parse</title>
 				<description>&lt;p&gt;We&amp;#39;ve been using &lt;a href=&quot;https://parse.com/&quot;&gt;Parse&lt;/a&gt; for a while at the office, but mainly for small projects and pet projects. The thing is, the more we use it, the more we want to use it again. So, there comes this project and it isn&amp;#39;t that small and we said: &amp;quot;lets build it with Parse and to test it with Cucumber&amp;quot;. I start working on it, and by the second day there I was searching the interwebs for a way to drop an entire Parse class using the REST API. Good luck with that.&lt;/p&gt;
 

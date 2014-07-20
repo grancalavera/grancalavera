@@ -8,7 +8,16 @@
     <title>Gran Calavera</title>
     <link>http://grancalavera.com</link>
     <description>RSS feed for Gran Calavera</description>
-    <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+    <pubDate>Sun, 20 Jul 2014 00:00:00 +0100</pubDate>
+    <item>
+      <title>Swift Double Dispatch Pattern</title>
+      <link>http://grancalavera.com/2014/07/20/swift-double-dispatch/</link>
+      <description>&lt;p&gt;I&amp;#39;ve been playing around with Swift since the day after it was announced and I must say I like it very much. So much my current pet project is a game built with Swift and SpriteKit.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 20 Jul 2014 00:00:00 +0100</pubDate>
+      <guid>http://grancalavera.com/2014/07/20/swift-double-dispatch/</guid>
+      <dc:date>2014-07-20T00:00:00+01:00</dc:date>
+    </item>
     <item>
       <title>Fathom: a Node.js command line tool for Parse</title>
       <link>http://grancalavera.com/2014/03/18/fathom-a-cli-tool-for-parse/</link>
@@ -45,6 +54,6 @@
       <guid>http://grancalavera.com/stuff/2014/01/15/grancalavera/</guid>
       <dc:date>2014-01-15T00:00:00+00:00</dc:date>
     </item>
-    <dc:date>2014-03-18T00:00:00+00:00</dc:date>
+    <dc:date>2014-07-20T00:00:00+01:00</dc:date>
   </channel>
 </rss>
