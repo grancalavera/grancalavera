@@ -46,6 +46,11 @@ p, figure {
   margin: 1.8em 0;
 }
 
+blockquote {
+  font-style: italic;
+  color: $c_med;
+}
+
 figcaption {
   text-align: right;
   font-size: 0.8em;

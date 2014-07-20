@@ -4,8 +4,6 @@
 
 module.exports = function(grunt) {
 
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-
   var pkg = grunt.file.readJSON('package.json');
 
   var commitMessage = function commitMessage () {
@@ -23,7 +21,7 @@ module.exports = function(grunt) {
     styles_src: [
       'bower_components/normalize-css/normalize.css',
       // this one came with Jekyll
-      'styles/syntax.css',
+      'jekyll/styles/syntax.css',
       '.tmp/css/*.css'
     ],
 
@@ -196,6 +194,8 @@ module.exports = function(grunt) {
     }
 
   });
+
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('gh_init', [
     'clean:gh_pages',
